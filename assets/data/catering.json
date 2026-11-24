@@ -1,0 +1,283 @@
+[
+    {
+        "id": "champ-dom",
+        "nome": "Champanhe Dom Pérignon Vintage",
+        "desc": "Garrafa de 750 ml, safra selecionada.",
+        "preco": 2400,
+        "unidade": "garrafa",
+        "alcool": true,
+        "tags": [],
+        "categoria": "bebidas",
+        "imagem": "assets/img/bebidas.jpg"
+    },
+    {
+        "id": "champ-veuve",
+        "nome": "Champanhe Veuve Clicquot Brut",
+        "desc": "Garrafa de 750 ml, servida gelada.",
+        "preco": 1100,
+        "unidade": "garrafa",
+        "alcool": true,
+        "tags": [],
+        "categoria": "bebidas",
+        "imagem": "assets/img/bebidas.jpg"
+    },
+    {
+        "id": "vinho-bord",
+        "nome": "Vinho Tinto Bordeaux Grand Cru",
+        "desc": "Garrafa de 750 ml, corpo encorpado.",
+        "preco": 680,
+        "unidade": "garrafa",
+        "alcool": true,
+        "tags": [],
+        "categoria": "bebidas",
+        "imagem": "assets/img/bebidas.jpg"
+    },
+    {
+        "id": "vinho-chab",
+        "nome": "Vinho Branco Chablis Premier Cru",
+        "desc": "Garrafa de 750 ml, mineral e seco.",
+        "preco": 520,
+        "unidade": "garrafa",
+        "alcool": true,
+        "tags": [],
+        "categoria": "bebidas",
+        "imagem": "assets/img/bebidas.jpg"
+    },
+    {
+        "id": "whisky-18",
+        "nome": "Whisky Single Malt 18 anos",
+        "desc": "Garrafa de 700 ml com gelo esculpido.",
+        "preco": 950,
+        "unidade": "garrafa",
+        "alcool": true,
+        "tags": [],
+        "categoria": "bebidas",
+        "imagem": "assets/img/bebidas.jpg"
+    },
+    {
+        "id": "gin-kit",
+        "nome": "Kit Gin Premium + Tônicas",
+        "desc": "Gin artesanal, 4 tônicas e especiarias.",
+        "preco": 420,
+        "unidade": "kit",
+        "alcool": true,
+        "tags": [],
+        "categoria": "bebidas",
+        "imagem": "assets/img/bebidas.jpg"
+    },
+    {
+        "id": "agua-imp",
+        "nome": "Água mineral importada",
+        "desc": "Com e sem gás, garrafa de 750 ml.",
+        "preco": 45,
+        "unidade": "garrafa",
+        "alcool": false,
+        "tags": [
+            "Vegano"
+        ],
+        "categoria": "bebidas",
+        "imagem": "assets/img/bebidas.jpg"
+    },
+    {
+        "id": "sucos",
+        "nome": "Sucos naturais da estação",
+        "desc": "Jarra de 1 L: laranja, abacaxi com hortelã ou maracujá.",
+        "preco": 120,
+        "unidade": "jarra",
+        "alcool": false,
+        "tags": [
+            "Vegano"
+        ],
+        "categoria": "bebidas",
+        "imagem": "assets/img/bebidas.jpg"
+    },
+    {
+        "id": "cafe-cha",
+        "nome": "Café espresso e seleção de chás",
+        "desc": "Serviço completo, por pessoa.",
+        "preco": 25,
+        "unidade": "por pessoa",
+        "alcool": false,
+        "tags": [
+            "Vegano"
+        ],
+        "categoria": "bebidas",
+        "imagem": "assets/img/bebidas.jpg"
+    },
+    {
+        "id": "queijos",
+        "nome": "Tábua de queijos e frios finos",
+        "desc": "Porção para até 4 pessoas.",
+        "preco": 380,
+        "unidade": "porção",
+        "alcool": false,
+        "tags": [
+            "Sem glúten"
+        ],
+        "categoria": "refeicoes",
+        "imagem": "assets/img/catering.jpg"
+    },
+    {
+        "id": "caviar",
+        "nome": "Caviar Imperial com blinis",
+        "desc": "Porção de 30 g, creme azedo e cebolinha.",
+        "preco": 1900,
+        "unidade": "porção",
+        "alcool": false,
+        "tags": [
+            "Sem glúten"
+        ],
+        "categoria": "refeicoes",
+        "imagem": "assets/img/catering.jpg"
+    },
+    {
+        "id": "lagosta",
+        "nome": "Salada de lagosta",
+        "desc": "Lagosta, folhas baby e vinagrete cítrico.",
+        "preco": 210,
+        "unidade": "por pessoa",
+        "alcool": false,
+        "tags": [
+            "Sem glúten",
+            "Sem lactose"
+        ],
+        "categoria": "refeicoes",
+        "imagem": "assets/img/catering.jpg"
+    },
+    {
+        "id": "file",
+        "nome": "Filé mignon ao molho de vinho tinto",
+        "desc": "Purê de batata trufado e legumes.",
+        "preco": 260,
+        "unidade": "por pessoa",
+        "alcool": false,
+        "tags": [
+            "Sem glúten"
+        ],
+        "categoria": "refeicoes",
+        "imagem": "assets/img/catering.jpg"
+    },
+    {
+        "id": "salmao",
+        "nome": "Salmão grelhado",
+        "desc": "Crosta de ervas, aspargos e limão siciliano.",
+        "preco": 240,
+        "unidade": "por pessoa",
+        "alcool": false,
+        "tags": [
+            "Sem glúten",
+            "Sem lactose"
+        ],
+        "categoria": "refeicoes",
+        "imagem": "assets/img/catering.jpg"
+    },
+    {
+        "id": "risoto",
+        "nome": "Risoto de cogumelos trufado",
+        "desc": "Arroz arbóreo, cogumelos e azeite de trufas.",
+        "preco": 230,
+        "unidade": "por pessoa",
+        "alcool": false,
+        "tags": [
+            "Vegetariano"
+        ],
+        "categoria": "refeicoes",
+        "imagem": "assets/img/catering.jpg"
+    },
+    {
+        "id": "bowl",
+        "nome": "Bowl mediterrâneo",
+        "desc": "Grão-de-bico, legumes grelhados e tahine.",
+        "preco": 190,
+        "unidade": "por pessoa",
+        "alcool": false,
+        "tags": [
+            "Vegano",
+            "Sem lactose"
+        ],
+        "categoria": "refeicoes",
+        "imagem": "assets/img/catering.jpg"
+    },
+    {
+        "id": "petit",
+        "nome": "Petit gâteau de chocolate belga",
+        "desc": "Com sorvete de baunilha de Madagascar.",
+        "preco": 90,
+        "unidade": "por pessoa",
+        "alcool": false,
+        "tags": [
+            "Vegetariano"
+        ],
+        "categoria": "refeicoes",
+        "imagem": "assets/img/catering.jpg"
+    },
+    {
+        "id": "castanhas",
+        "nome": "Mix de castanhas e frutas secas",
+        "desc": "Porção individual premium.",
+        "preco": 80,
+        "unidade": "porção",
+        "alcool": false,
+        "tags": [
+            "Vegano",
+            "Sem glúten"
+        ],
+        "categoria": "snacks",
+        "imagem": "assets/img/snacks.jpg"
+    },
+    {
+        "id": "frutas",
+        "nome": "Frutas frescas fatiadas",
+        "desc": "Seleção da estação.",
+        "preco": 110,
+        "unidade": "por pessoa",
+        "alcool": false,
+        "tags": [
+            "Vegano",
+            "Sem glúten",
+            "Sem lactose"
+        ],
+        "categoria": "snacks",
+        "imagem": "assets/img/snacks.jpg"
+    },
+    {
+        "id": "macarons",
+        "nome": "Caixa de macarons franceses",
+        "desc": "12 unidades, sabores sortidos.",
+        "preco": 150,
+        "unidade": "caixa",
+        "alcool": false,
+        "tags": [
+            "Vegetariano",
+            "Sem glúten"
+        ],
+        "categoria": "snacks",
+        "imagem": "assets/img/snacks.jpg"
+    },
+    {
+        "id": "chocolates",
+        "nome": "Chocolates belgas sortidos",
+        "desc": "Caixa com 16 unidades.",
+        "preco": 140,
+        "unidade": "caixa",
+        "alcool": false,
+        "tags": [
+            "Vegetariano"
+        ],
+        "categoria": "snacks",
+        "imagem": "assets/img/snacks.jpg"
+    },
+    {
+        "id": "biscoitos",
+        "nome": "Biscoitos finos amanteigados",
+        "desc": "Porção para 4 pessoas.",
+        "preco": 60,
+        "unidade": "porção",
+        "alcool": false,
+        "tags": [
+            "Vegetariano"
+        ],
+        "categoria": "snacks",
+        "imagem": "assets/img/snacks.jpg"
+    }
+]

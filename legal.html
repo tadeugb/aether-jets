@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações legais | Aether Jets</title>
+    <meta name="description" content="Privacidade, termos de uso, cookies e certificações.">
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="assets/vendor/lucide.js"></script>
+    <link rel="stylesheet" href="assets/css/cinematic.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="bg-sand text-ink font-sans antialiased selection:bg-wine selection:text-white">
+    <div id="layout-header"></div>
+    <main id="main" class="max-w-3xl mx-auto px-4 sm:px-8 py-12 space-y-12">
+        <header><span class="text-taupe text-xs uppercase tracking-[0.2em] font-semibold block mb-2">Legal</span><h1 class="font-serif text-4xl font-bold text-ink mb-3">Informações legais</h1>
+            <p class="text-sm text-mute">Este é um projeto de demonstração. Os textos abaixo descrevem o comportamento real do site e servem de modelo; não substituem aconselhamento jurídico.</p>
+            <nav class="flex flex-wrap gap-2 mt-4" aria-label="Seções"><a class="chip" href="#privacidade">Privacidade</a><a class="chip" href="#termos">Termos de uso</a><a class="chip" href="#cookies">Cookies (LGPD)</a><a class="chip" href="#certificacoes">Certificações ANAC</a></nav></header>
+        <section id="privacidade" class="scroll-mt-28"><h2 class="font-serif text-2xl font-bold text-ink mb-3">Política de privacidade</h2>
+            <p class="text-mute leading-relaxed mb-3">Este site não possui servidor: formulários (newsletter, contato, cotação), alertas de empty legs, reservas e preferências ficam salvos apenas no <strong class="text-ink">localStorage do seu navegador</strong> e não são enviados a ninguém. Você pode apagá-los limpando os dados do site.</p>
+            <p class="text-mute leading-relaxed">Chamadas externas existentes: fontes do Google, bibliotecas via CDN, imagens do Unsplash e, na previsão do tempo, a API Open-Meteo (envia apenas coordenadas do aeroporto). Em uma versão de produção, o controlador dos dados, a base legal (LGPD) e os canais do titular deveriam ser descritos aqui.</p></section>
+        <section id="termos" class="scroll-mt-28"><h2 class="font-serif text-2xl font-bold text-ink mb-3">Termos de uso</h2>
+            <ul class="list-disc pl-5 space-y-2 text-mute leading-relaxed"><li>Preços, disponibilidade, empty legs, pagamentos e passagens são <strong class="text-ink">simulados</strong>; nenhuma cobrança ou voo real é gerado.</li><li>As estimativas usam distância de círculo máximo (Haversine) com fator de rota 1,05 e taxas fixas; valores em USD/EUR usam taxas de referência fixas.</li><li>Cancelamentos e reembolsos exibidos seguem a política simulada de cada passagem.</li></ul></section>
+        <section id="cookies" class="scroll-mt-28"><h2 class="font-serif text-2xl font-bold text-ink mb-3">Cookies (LGPD)</h2>
+            <p class="text-mute leading-relaxed mb-3">Não usamos cookies de rastreamento nem publicidade. Usamos armazenamento local essencial: aceite de cookies, idioma e moeda, rascunho de reserva, passagens simuladas e alertas.</p>
+            <button type="button" class="btn btn-ghost btn-sm" id="reset-cookies">Redefinir aviso de cookies</button> <span id="cookie-status" role="status" class="text-ok text-sm ml-2"></span></section>
+        <section id="certificacoes" class="scroll-mt-28"><h2 class="font-serif text-2xl font-bold text-ink mb-3">Certificações ANAC</h2>
+            <p class="text-mute leading-relaxed mb-3">Operadores de táxi aéreo no Brasil são regulados pela ANAC (RBAC 135) e devem apresentar o certificado de operador aéreo. <strong class="text-ink">Esta empresa é fictícia</strong>: nenhuma certificação real é declarada.</p>
+            <p class="text-mute leading-relaxed">Para operar de verdade, informe aqui o número do certificado e o link de consulta oficial da ANAC.</p></section>
+    </main>
+    <div id="layout-footer"></div>
+    <script src="assets/js/images.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/airports.js"></script>
+    <script src="assets/js/route-config.js"></script>
+    <script src="assets/js/route-service.js"></script>
+    <script src="assets/js/catalog.js"></script>
+    <script src="assets/js/catalog-seed.js"></script>
+    <script src="assets/js/catalog-store.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/aether-core.js"></script>
+    <script src="assets/js/aether-ui.js"></script>
+    <script>
+        Aether.mountLayout({ active: 'legal' }); AetherI18n.apply();
+        document.getElementById('reset-cookies').addEventListener('click', function () {
+            try { localStorage.removeItem('aether_cookies'); } catch (e) {}
+            document.getElementById('cookie-status').textContent = 'Aviso redefinido: ele aparecerá novamente ao recarregar a página.';
+        });
+    </script>
+</body>
+</html>

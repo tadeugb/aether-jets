@@ -1,0 +1,536 @@
+{
+  ".vscode/settings.json": {
+    "mtime": 1794665360.0,
+    "seen": 1795554093.301979,
+    "ast_hash": "19751b2a32e46d1ba1477f357123a898",
+    "semantic_hash": ""
+  },
+  "assets/data/airports.json": {
+    "mtime": 1795008847.0,
+    "seen": 1795554093.3019874,
+    "ast_hash": "8d04330fd9037c8b1cb17e4ee979ead5",
+    "semantic_hash": ""
+  },
+  "assets/data/catering.json": {
+    "mtime": 1795009528.0,
+    "seen": 1795554093.3019917,
+    "ast_hash": "eb8924270a17c70f507f48c89de863d6",
+    "semantic_hash": ""
+  },
+  "assets/data/frota.json": {
+    "mtime": 1795009024.0,
+    "seen": 1795554093.3019946,
+    "ast_hash": "283ccd5a50615c607bb043747fdc7aa0",
+    "semantic_hash": ""
+  },
+  "assets/data/pacotes.json": {
+    "mtime": 1795009380.0,
+    "seen": 1795554093.3019974,
+    "ast_hash": "b0baad8abfc2b42d3b40a96fc8f7dc3b",
+    "semantic_hash": ""
+  },
+  "assets/js/admin-auth.js": {
+    "mtime": 1795554688.239008,
+    "seen": 1795554701.7085104,
+    "ast_hash": "8bf9df82cd7cc6171f3e1af07cb3fb18",
+    "semantic_hash": ""
+  },
+  "assets/js/aether-core.js": {
+    "mtime": 1795554688.2380478,
+    "seen": 1795554701.7085133,
+    "ast_hash": "3392995962f67b17fe5fde6981f198eb",
+    "semantic_hash": ""
+  },
+  "assets/js/aether-ui.js": {
+    "mtime": 1795009140.0,
+    "seen": 1795554093.3020034,
+    "ast_hash": "fcda83224205aea45146b49571825148",
+    "semantic_hash": ""
+  },
+  "assets/js/airports.js": {
+    "mtime": 1795008847.0,
+    "seen": 1795554093.3020055,
+    "ast_hash": "c53581d4aa84c88560d46dff4885c1a9",
+    "semantic_hash": ""
+  },
+  "assets/js/catalog-seed.js": {
+    "mtime": 1795009528.0,
+    "seen": 1795554093.302008,
+    "ast_hash": "403abbc2042bd934fc192fab23b10e0d",
+    "semantic_hash": ""
+  },
+  "assets/js/catalog-store.js": {
+    "mtime": 1795554688.238604,
+    "seen": 1795554701.7085907,
+    "ast_hash": "be8387a00ac054e9746411e25b52d88f",
+    "semantic_hash": ""
+  },
+  "assets/js/catalog.js": {
+    "mtime": 1795009025.0,
+    "seen": 1795554093.3020127,
+    "ast_hash": "0437c11cda27f0c64ea389694b34474c",
+    "semantic_hash": ""
+  },
+  "assets/js/cinematic.js": {
+    "mtime": 1794951363.0,
+    "seen": 1795554093.3020144,
+    "ast_hash": "ba027a22fd91e8ef7f8344eaba325467",
+    "semantic_hash": ""
+  },
+  "assets/js/client-portal.js": {
+    "mtime": 1795008977.0,
+    "seen": 1795554093.302017,
+    "ast_hash": "515a01949e97c2ac8b05082369a647e4",
+    "semantic_hash": ""
+  },
+  "assets/js/data.js": {
+    "mtime": 1795009380.0,
+    "seen": 1795554093.302019,
+    "ast_hash": "7c835dc9a27a9ec132593164f262c722",
+    "semantic_hash": ""
+  },
+  "assets/js/empty-legs-feed.js": {
+    "mtime": 1794951214.0,
+    "seen": 1795554093.3020203,
+    "ast_hash": "8cc90b47c3b9a888d842e890608daca9",
+    "semantic_hash": ""
+  },
+  "assets/js/empty-legs.js": {
+    "mtime": 1794951253.0,
+    "seen": 1795554093.3020227,
+    "ast_hash": "952cb582e454b7bc9950bf9b3d1db1ca",
+    "semantic_hash": ""
+  },
+  "assets/js/home.js": {
+    "mtime": 1795009140.0,
+    "seen": 1795554093.3020248,
+    "ast_hash": "2b03b6eb121c184876ebda14be29fb89",
+    "semantic_hash": ""
+  },
+  "assets/js/i18n.js": {
+    "mtime": 1795009140.0,
+    "seen": 1795554093.3020272,
+    "ast_hash": "edf8a6dbc03d4cb42cc87fed735aee67",
+    "semantic_hash": ""
+  },
+  "assets/js/images.js": {
+    "mtime": 1795008977.0,
+    "seen": 1795554093.3020298,
+    "ast_hash": "57d427f7ab7754a8c6aa910ab9f6d4d1",
+    "semantic_hash": ""
+  },
+  "assets/js/page-admin-login.js": {
+    "mtime": 1795554688.2394328,
+    "seen": 1795554701.7088256,
+    "ast_hash": "9acfabb1bb844bca2f744f905addb9bc",
+    "semantic_hash": ""
+  },
+  "assets/js/page-admin.js": {
+    "mtime": 1795554696.9349382,
+    "seen": 1795554701.7088284,
+    "ast_hash": "0331126d428b8d857cf0f1ec7d65ae04",
+    "semantic_hash": ""
+  },
+  "assets/js/page-cardapio.js": {
+    "mtime": 1795009025.0,
+    "seen": 1795554093.3020363,
+    "ast_hash": "e114dfa5e0f1df522d32ecc1b4a2470e",
+    "semantic_hash": ""
+  },
+  "assets/js/page-criar.js": {
+    "mtime": 1795009380.0,
+    "seen": 1795554093.3020387,
+    "ast_hash": "2612d6a1ced8d7dbbd56a82b28ead248",
+    "semantic_hash": ""
+  },
+  "assets/js/page-frota.js": {
+    "mtime": 1795009140.0,
+    "seen": 1795554093.302041,
+    "ast_hash": "4304ac34570c2fda80de432e1ef7acb7",
+    "semantic_hash": ""
+  },
+  "assets/js/page-pacotes.js": {
+    "mtime": 1795009140.0,
+    "seen": 1795554093.3020432,
+    "ast_hash": "bb853ad1727c79ce93fc0ff75d48a05f",
+    "semantic_hash": ""
+  },
+  "assets/js/page-pagamento.js": {
+    "mtime": 1795008910.0,
+    "seen": 1795554093.3020453,
+    "ast_hash": "86385b275d34b19d96f0bdb99b0c1868",
+    "semantic_hash": ""
+  },
+  "assets/js/page-passagens.js": {
+    "mtime": 1795009380.0,
+    "seen": 1795554093.3020475,
+    "ast_hash": "073127086a21bbb6f8b578eb0140f808",
+    "semantic_hash": ""
+  },
+  "assets/js/route-config.js": {
+    "mtime": 1795008846.0,
+    "seen": 1795554093.3020499,
+    "ast_hash": "cf0b76dbaf5dca9daa49d3aba37ce10d",
+    "semantic_hash": ""
+  },
+  "assets/js/route-service.js": {
+    "mtime": 1795008846.0,
+    "seen": 1795554093.3020518,
+    "ast_hash": "6ad924cf319ed1e96284093513799069",
+    "semantic_hash": ""
+  },
+  "assets/js/tailwind-config.js": {
+    "mtime": 1795009486.0,
+    "seen": 1795554093.3020542,
+    "ast_hash": "df38ab1d86f9dbe1828571516b432282",
+    "semantic_hash": ""
+  },
+  "assets/vendor/gsap.js": {
+    "mtime": 1795008878.0,
+    "seen": 1795554093.3020566,
+    "ast_hash": "448deef673e4d919eb5592410f72533e",
+    "semantic_hash": ""
+  },
+  "assets/vendor/lenis.js": {
+    "mtime": 1795008879.0,
+    "seen": 1795554093.3020587,
+    "ast_hash": "79e3a0644dc32ccb02148a9f5a52a485",
+    "semantic_hash": ""
+  },
+  "assets/vendor/lucide.js": {
+    "mtime": 1795008880.0,
+    "seen": 1795554093.3020608,
+    "ast_hash": "be92f985b6e9aa4c37648c5eea72a759",
+    "semantic_hash": ""
+  },
+  "assets/vendor/scroll-trigger.js": {
+    "mtime": 1795008878.0,
+    "seen": 1795554093.302063,
+    "ast_hash": "9f0592f8748a65b0c765a9dc16e8965f",
+    "semantic_hash": ""
+  },
+  "tools/build_airports.py": {
+    "mtime": 1795009380.0,
+    "seen": 1795554093.3020651,
+    "ast_hash": "c322c42c338201deec48bb27a4e25f0c",
+    "semantic_hash": ""
+  },
+  "tools/build_catalog.py": {
+    "mtime": 1795009024.0,
+    "seen": 1795554093.3020675,
+    "ast_hash": "6284cd7f52e467df67a3043a7db5e953",
+    "semantic_hash": ""
+  },
+  "ARQUIVOS-ALTERADOS.md": {
+    "mtime": 1795009615.0,
+    "seen": 1795554093.3020697,
+    "ast_hash": "f66f8c55f1c0dde5d9e003834f0b7bee",
+    "semantic_hash": ""
+  },
+  "LEIAME-ALTERACOES.md": {
+    "mtime": 1795009528.0,
+    "seen": 1795554093.3020716,
+    "ast_hash": "5e21b00e121c22e3aed9671c69fe5df1",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1795559244.9278836,
+    "seen": 1795559343.6211708,
+    "ast_hash": "d7a9c0740d858ce8f8bfe73da1f920bf",
+    "semantic_hash": ""
+  },
+  "admin-login.html": {
+    "mtime": 1795009486.0,
+    "seen": 1795554093.3020759,
+    "ast_hash": "883aacd693b483a6e2c2e492ab511519",
+    "semantic_hash": ""
+  },
+  "admin.html": {
+    "mtime": 1795558472.3772461,
+    "seen": 1795558485.995861,
+    "ast_hash": "e06530af2133e7824acb33343566ea26",
+    "semantic_hash": ""
+  },
+  "assets/css/LICENSE-tailwind.txt": {
+    "mtime": 1795009509.0,
+    "seen": 1795554093.3020809,
+    "ast_hash": "38e1dd4eb26984d63336027ded02015f",
+    "semantic_hash": ""
+  },
+  "assets/vendor/LICENSE-lenis.txt": {
+    "mtime": 1795009513.0,
+    "seen": 1795554093.3020835,
+    "ast_hash": "8d3685ce7c841d3581686c9dce65a90a",
+    "semantic_hash": ""
+  },
+  "assets/vendor/LICENSE-lucide.txt": {
+    "mtime": 1795009512.0,
+    "seen": 1795554093.302086,
+    "ast_hash": "457562d70a4702c994473da969e9b24b",
+    "semantic_hash": ""
+  },
+  "blog.html": {
+    "mtime": 1795009486.0,
+    "seen": 1795554093.3020885,
+    "ast_hash": "d8f2fa9ecef33204c216d1fb400790ec",
+    "semantic_hash": ""
+  },
+  "cardapio.html": {
+    "mtime": 1795009486.0,
+    "seen": 1795554093.3020906,
+    "ast_hash": "1ef6ce0a7ceb04ea9cde128bd1101cd8",
+    "semantic_hash": ""
+  },
+  "criar-passagem.html": {
+    "mtime": 1795009486.0,
+    "seen": 1795554093.3020928,
+    "ast_hash": "ec79831060af3887e4d303f8a4fdad23",
+    "semantic_hash": ""
+  },
+  "empty-legs.html": {
+    "mtime": 1795009486.0,
+    "seen": 1795554093.3020952,
+    "ast_hash": "78d5dcc0826bf730c9e460533b6b18d4",
+    "semantic_hash": ""
+  },
+  "frota.html": {
+    "mtime": 1795009486.0,
+    "seen": 1795554093.3020973,
+    "ast_hash": "98a8c715b56cca8b9cfd28e9ccc02b2f",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1795009486.0,
+    "seen": 1795554093.3020995,
+    "ast_hash": "3bd8cc4b931ed5b1c7ec6a07533a4a03",
+    "semantic_hash": ""
+  },
+  "legal.html": {
+    "mtime": 1795009486.0,
+    "seen": 1795554093.3021019,
+    "ast_hash": "5f955468f801de4eecb444f7a6589029",
+    "semantic_hash": ""
+  },
+  "pacotes.html": {
+    "mtime": 1795009486.0,
+    "seen": 1795554093.302104,
+    "ast_hash": "1896b335507cb10a41e72a8683290cc2",
+    "semantic_hash": ""
+  },
+  "pagamento.html": {
+    "mtime": 1795009486.0,
+    "seen": 1795554093.3021066,
+    "ast_hash": "77af91586535211fdfd1ebc8d37a058e",
+    "semantic_hash": ""
+  },
+  "passagens.html": {
+    "mtime": 1795009486.0,
+    "seen": 1795554093.3021085,
+    "ast_hash": "3f081a8ff057f9aca9f372449a951f7b",
+    "semantic_hash": ""
+  },
+  "sobre.html": {
+    "mtime": 1795009486.0,
+    "seen": 1795554093.302111,
+    "ast_hash": "e161fefb04d1fd54ff51846ffd4091ca",
+    "semantic_hash": ""
+  },
+  "assets/img/avatar-fallback.webp": {
+    "mtime": 1795008977.0,
+    "seen": 1795554093.3021128,
+    "ast_hash": "0c0a8ea29a051d7d97197d3a755ebba2",
+    "semantic_hash": ""
+  },
+  "assets/img/avatar.jpg": {
+    "mtime": 1795008976.0,
+    "seen": 1795554093.302115,
+    "ast_hash": "b605582a47eba5ca9bbd3d1b21eebda8",
+    "semantic_hash": ""
+  },
+  "assets/img/bebidas.jpg": {
+    "mtime": 1795009476.0,
+    "seen": 1795554093.3021176,
+    "ast_hash": "37245078901205d67f94482ef7c339fb",
+    "semantic_hash": ""
+  },
+  "assets/img/catering-fallback.webp": {
+    "mtime": 1795008977.0,
+    "seen": 1795554093.30212,
+    "ast_hash": "197bfe1328a5bf6477f5fbf7fa678ba9",
+    "semantic_hash": ""
+  },
+  "assets/img/catering.jpg": {
+    "mtime": 1795008929.0,
+    "seen": 1795554093.3021216,
+    "ast_hash": "8479cc0f8226734e1d36598dfccdb34c",
+    "semantic_hash": ""
+  },
+  "assets/img/destino-fallback.webp": {
+    "mtime": 1795008976.0,
+    "seen": 1795554093.3021235,
+    "ast_hash": "d8bfb11634a0043cfcc10b428c4466b0",
+    "semantic_hash": ""
+  },
+  "assets/img/florianopolis.webp": {
+    "mtime": 1795009261.0,
+    "seen": 1795554093.3021255,
+    "ast_hash": "4069b2cfe211cf48930277a07c43130f",
+    "semantic_hash": ""
+  },
+  "assets/img/jato-fallback.webp": {
+    "mtime": 1795008976.0,
+    "seen": 1795554093.3021278,
+    "ast_hash": "ccd48e410063607ae5c0814248e622e8",
+    "semantic_hash": ""
+  },
+  "assets/img/jato.webp": {
+    "mtime": 1795008976.0,
+    "seen": 1795554093.3021305,
+    "ast_hash": "53e9e6db1c0148d6e9353ad6bcb39d3a",
+    "semantic_hash": ""
+  },
+  "assets/img/madri.jpg": {
+    "mtime": 1795008976.0,
+    "seen": 1795554093.3021321,
+    "ast_hash": "05e0955a8816a80d3e863b4807a3fddf",
+    "semantic_hash": ""
+  },
+  "assets/img/miami.jpg": {
+    "mtime": 1795008976.0,
+    "seen": 1795554093.3021345,
+    "ast_hash": "fb9465ffc37cf08eadd0648957365990",
+    "semantic_hash": ""
+  },
+  "assets/img/rio.webp": {
+    "mtime": 1795009262.0,
+    "seen": 1795554093.3021367,
+    "ast_hash": "2b1cdd54a3c6aa18958e0034f8db1cda",
+    "semantic_hash": ""
+  },
+  "assets/img/sao-paulo.webp": {
+    "mtime": 1795009261.0,
+    "seen": 1795554093.3021383,
+    "ast_hash": "acdf91de83c3592172ad8aa1e765fec2",
+    "semantic_hash": ""
+  },
+  "assets/img/snacks.jpg": {
+    "mtime": 1795008929.0,
+    "seen": 1795554093.302141,
+    "ast_hash": "66605ab4fa215889d8160c3251a9106b",
+    "semantic_hash": ""
+  },
+  "img/image copy.png": {
+    "mtime": 1794825842.0,
+    "seen": 1795554093.3021433,
+    "ast_hash": "d0cf9db747c54c7c7d60594a242ba9e5",
+    "semantic_hash": ""
+  },
+  "img/image.png": {
+    "mtime": 1794824064.0,
+    "seen": 1795554093.3021448,
+    "ast_hash": "4784d98e061972251db4e73238df0681",
+    "semantic_hash": ""
+  },
+  "package.json": {
+    "mtime": 1795559602.2575378,
+    "seen": 1795559615.0987449,
+    "ast_hash": "0326b9122da6042c4a8373d97efb6a15",
+    "semantic_hash": ""
+  },
+  "server.js": {
+    "mtime": 1795558472.3751004,
+    "seen": 1795558485.9956758,
+    "ast_hash": "d35592ce468cc1c09dbac63a1a58bbb7",
+    "semantic_hash": ""
+  },
+  "test/api.test.js": {
+    "mtime": 1795558485.5559177,
+    "seen": 1795558485.9956799,
+    "ast_hash": "d49edab48843f13037b29f77cfc7d186",
+    "semantic_hash": ""
+  },
+  "assets/js/page-admin-relatorios.js": {
+    "mtime": 1795558472.3881001,
+    "seen": 1795558485.995085,
+    "ast_hash": "d7f73a8c75b0a8b3539ef63852c9c21b",
+    "semantic_hash": ""
+  },
+  "tools/gerar_relatorio.py": {
+    "mtime": 1795559622.7497323,
+    "seen": 1795559639.533352,
+    "ast_hash": "14317c7ed78d7aa488411719cb089132",
+    "semantic_hash": ""
+  },
+  "docs/prints/admin-aeronaves.png": {
+    "mtime": 1795559056.6756997,
+    "seen": 1795559069.708753,
+    "ast_hash": "d40513b36fda74a550c43dc2016c040e",
+    "semantic_hash": ""
+  },
+  "docs/prints/admin-editar.png": {
+    "mtime": 1795559056.6761992,
+    "seen": 1795559069.708756,
+    "ast_hash": "0b983b8c82cdbbe405d5a2e9cd95638f",
+    "semantic_hash": ""
+  },
+  "docs/prints/criar.png": {
+    "mtime": 1795559056.675054,
+    "seen": 1795559069.708759,
+    "ast_hash": "495f83984c431533543f57dfa9811f74",
+    "semantic_hash": ""
+  },
+  "docs/prints/rel-faturamento.png": {
+    "mtime": 1795559056.6766894,
+    "seen": 1795559069.7087615,
+    "ast_hash": "59b4684421959083da40afbd6db30f32",
+    "semantic_hash": ""
+  },
+  "docs/prints/rel-frota.png": {
+    "mtime": 1795559056.67724,
+    "seen": 1795559069.708764,
+    "ast_hash": "275c41b56422af86ef3d039acf2c8a63",
+    "semantic_hash": ""
+  },
+  "docs/prints/simulador.png": {
+    "mtime": 1795559056.6740084,
+    "seen": 1795559069.7087667,
+    "ast_hash": "23632022f3453ea81816db1769ac02d0",
+    "semantic_hash": ""
+  },
+  "docs/relatorio.html": {
+    "mtime": 1795559623.8047223,
+    "seen": 1795559639.5335932,
+    "ast_hash": "a072adee164dc7eee79946c15dced278",
+    "semantic_hash": ""
+  },
+  "docs/Relatorio_Trabalho_Pratico_BD.pdf": {
+    "mtime": 1795559626.1876967,
+    "seen": 1795559639.5337782,
+    "ast_hash": "fd0195e185628de693ea5b6f3ef2e757",
+    "semantic_hash": ""
+  },
+  "docs/Especificacao_trabalho_pratico_BD.pdf": {
+    "mtime": 1795558158.4884472,
+    "seen": 1795559343.6215682,
+    "ast_hash": "0e399f28ed9bafad7bf093b3c3e9469e",
+    "semantic_hash": ""
+  },
+  "db/setup.js": {
+    "mtime": 1795559602.2179542,
+    "seen": 1795559615.0987415,
+    "ast_hash": "1edcd366aa004b46efbbec735c25df0f",
+    "semantic_hash": ""
+  },
+  "docs/Relat\u00f3rio \u2013 Aether Jets.pdf": {
+    "mtime": 1795559521.855837,
+    "seen": 1795559615.0993497,
+    "ast_hash": "df064ecbdcc85846f1fba27f59a06ebf",
+    "semantic_hash": ""
+  },
+  "package-lock.json": {
+    "mtime": 1795554559.0433466,
+    "seen": 1795554572.7572563,
+    "ast_hash": "eefabe1ffce1a79f6829bf76b314820e",
+    "semantic_hash": ""
+  }
+}

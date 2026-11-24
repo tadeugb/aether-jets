@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aether Jets | Fretamento de jatos particulares</title>
+    <meta name="description" content="Cotação instantânea de jatos executivos pela distância real da rota, empty legs ao vivo e frota completa.">
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="assets/js/images.js"></script>
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="assets/vendor/lucide.js"></script>
+    <!-- GSAP + ScrollTrigger + Lenis: se algum falhar, o site funciona sem a animação -->
+    <script src="assets/vendor/gsap.js"></script>
+    <script src="assets/vendor/scroll-trigger.js"></script>
+    <script src="assets/vendor/lenis.js"></script>
+    <link rel="stylesheet" href="assets/css/cinematic.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="cinematic-body bg-sand text-ink font-sans antialiased selection:bg-wine selection:text-white">
+
+    <!-- PRELOADER + LETTERBOX (cinza-chumbo) -->
+    <div id="preloader" class="scope-night" aria-hidden="true">
+        <div class="flex flex-col items-center gap-4">
+            <div class="w-16 h-16 rounded-xl bg-wine/30 border border-taupe/40 flex items-center justify-center animate-pulse"><i data-lucide="plane" class="w-8 h-8 text-taupe -rotate-45"></i></div>
+            <span class="font-serif text-2xl font-bold tracking-widest text-ink uppercase">Aether Jets</span>
+            <div id="preloader-counter" class="text-taupe font-mono text-lg">0%</div>
+        </div>
+    </div>
+    <div class="letterbox-bar letterbox-top" aria-hidden="true"></div>
+    <div class="letterbox-bar letterbox-bottom" aria-hidden="true"></div>
+
+    <div id="global-bg-fixed"></div>
+    <svg id="film-grain" aria-hidden="true"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#noiseFilter)"/></svg>
+    <canvas id="star-canvas" aria-hidden="true"></canvas>
+
+    <div id="layout-header"></div>
+
+    <!-- #home-content: o portal do cliente (#/area-cliente) esconde este bloco -->
+    <div id="home-content">
+    <main id="main">
+
+        <!-- HERO (escopo noturno: cinza-chumbo + vinho sobre a foto) -->
+        <section class="scope-night relative min-h-[84vh] flex items-center overflow-hidden pt-16 pb-44 bg-sand">
+            <div class="absolute inset-0 hero-grade">
+                <img src="assets/img/jato.webp" onerror="AetherImages.fallback(this, 'jato')" alt="Jato executivo particular na pista ao entardecer" class="hero-img w-full h-full object-cover object-center" fetchpriority="high">
+            </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 w-full">
+                <div class="max-w-3xl reveal">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ink/10 border border-taupe/40 text-taupe text-xs font-medium uppercase tracking-widest mb-6">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i><span data-i18n="hero.badge">Avião particular • Fretamento sob medida</span>
+                    </div>
+                    <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.08] text-ink">
+                        <span data-i18n="hero.t1">O céu inteiro à</span><br><span class="silver-text italic font-normal" data-i18n="hero.t2">sua disposição.</span>
+                    </h1>
+                    <p class="text-base sm:text-xl text-mute font-light mb-8 max-w-2xl leading-relaxed" data-i18n="hero.sub">Decole no seu horário, sem filas e com total privacidade.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#simulador" class="btn btn-wine px-8 py-4"><span data-i18n="hero.cta1">Simular viagem</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                        <a href="frota.html" class="btn btn-ghost px-8 py-4 backdrop-blur-sm" data-i18n="hero.cta2">Conhecer a frota</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SIMULADOR (painel prata que sobrepõe o hero) -->
+        <section id="simulador" class="relative z-20 -mt-32 pb-16 scroll-mt-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-8">
+                <div class="glass-panel sheen p-6 sm:p-8 rounded-2xl">
+                    <div class="flex items-center justify-between mb-6 gap-3">
+                        <div class="flex items-center gap-3"><span class="live-dot" aria-hidden="true"></span><h2 class="font-serif text-lg font-semibold text-ink tracking-wide" data-i18n="sim.title">Simulador rápido de cotação</h2></div>
+                        <span class="text-xs text-mute hidden sm:inline" data-i18n="sim.reply">Cálculo na hora, direto no navegador</span>
+                    </div>
+                    <form id="quote-form" novalidate class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-start">
+                        <div><label class="field-label" for="sim-origem" data-i18n="sim.origin">Origem</label><div class="relative"><i data-lucide="map-pin" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-wineInk pointer-events-none"></i><input id="sim-origem" class="field pl-10" type="text" data-i18n-ph="sim.phO" placeholder="Ex.: GRU, Belo Horizonte, SBSP" autocomplete="off"></div><div class="field-error" data-error-for="sim-origem" role="alert"></div></div>
+                        <div><label class="field-label" for="sim-destino" data-i18n="sim.dest">Destino</label><div class="relative"><i data-lucide="navigation" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-wineInk pointer-events-none"></i><input id="sim-destino" class="field pl-10" type="text" data-i18n-ph="sim.phD" placeholder="Ex.: MIA, Florianópolis, SBFL" autocomplete="off"></div><div class="field-error" data-error-for="sim-destino" role="alert"></div></div>
+                        <div><label class="field-label" for="sim-data" data-i18n="sim.date">Data e horário</label><input id="sim-data" class="field" type="datetime-local"><div class="field-error" data-error-for="sim-data" role="alert"></div></div>
+                        <div><label class="field-label" for="sim-pax" data-i18n="sim.pax">Passageiros</label><input id="sim-pax" class="field" type="number" min="1" step="1" value="4" inputmode="numeric"><div class="field-error" data-error-for="sim-pax" role="alert"></div></div>
+                        <div class="lg:pt-[1.55rem]"><button type="submit" class="btn btn-wine w-full h-[46px]"><span data-i18n="sim.submit">Ver jatos</span><i data-lucide="search" class="w-4 h-4"></i></button></div>
+                    </form>
+                    <div id="sim-suggest" class="mt-3 text-xs" aria-live="polite"></div>
+                    <!-- Resultado na própria página -->
+                    <div id="quote-result" class="hidden mt-6 card p-5 sm:p-6 scroll-mt-28" tabindex="-1" aria-live="polite"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMO FUNCIONA -->
+        <section id="como-funciona" class="py-16 scroll-mt-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-8">
+                <div class="text-center mb-10 reveal"><span class="text-taupe text-xs uppercase tracking-[0.2em] font-semibold block mb-2" data-i18n="how.eyebrow">Simples e eficiente</span><h2 class="font-serif text-3xl sm:text-4xl font-bold text-ink" data-i18n="how.title">Como funciona</h2></div>
+                <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <li class="card p-6 reveal"><span class="text-wineInk font-serif text-3xl font-bold block mb-2">01</span><h3 class="font-serif text-lg font-bold text-ink mb-1" data-i18n="how.s1t">Escolha a rota</h3><p class="text-mute text-sm" data-i18n="how.s1d">Informe origem, destino, data e passageiros.</p></li>
+                    <li class="card p-6 reveal"><span class="text-wineInk font-serif text-3xl font-bold block mb-2">02</span><h3 class="font-serif text-lg font-bold text-ink mb-1" data-i18n="how.s2t">Compare jatos</h3><p class="text-mute text-sm" data-i18n="how.s2d">Veja aeronaves viáveis e preços pela distância real.</p></li>
+                    <li class="card p-6 reveal"><span class="text-wineInk font-serif text-3xl font-bold block mb-2">03</span><h3 class="font-serif text-lg font-bold text-ink mb-1" data-i18n="how.s3t">Personalize</h3><p class="text-mute text-sm" data-i18n="how.s3d">Cardápio, transfer e pedidos especiais.</p></li>
+                    <li class="card p-6 reveal"><span class="text-wineInk font-serif text-3xl font-bold block mb-2">04</span><h3 class="font-serif text-lg font-bold text-ink mb-1" data-i18n="how.s4t">Pague e embarque</h3><p class="text-mute text-sm" data-i18n="how.s4d">Confirme e embarque direto no terminal executivo.</p></li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- FROTA: só as 4 categorias (renderizadas por home.js a partir de FLEET) -->
+        <section id="frota" class="py-16 scroll-mt-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 reveal">
+                    <div><span class="text-taupe text-xs uppercase tracking-[0.2em] font-semibold block mb-2" data-i18n="fleet.eyebrow">Frota</span><h2 class="font-serif text-3xl sm:text-4xl font-bold text-ink" data-i18n="fleet.title">Aeronaves de elite</h2></div>
+                    <a href="frota.html" class="btn btn-ghost btn-sm self-start md:self-auto"><span data-i18n="fleet.all">Ver todas as aeronaves</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+                <div id="fleet-categories" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"></div>
+            </div>
+        </section>
+
+        <!-- EMPTY LEGS: prévia com 3 cards (página completa: empty-legs.html) -->
+        <div class="divider-up" aria-hidden="true"></div>
+        <section id="empty-legs" class="scope-night bg-sand py-16 scroll-mt-24 relative overflow-hidden">
+            <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(circle at 85% 0%, rgba(109,15,35,.35), transparent 55%)"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-8 relative">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2 text-taupe text-xs uppercase tracking-[0.2em] font-semibold"><span id="el-live-dot" class="live-dot" aria-hidden="true"></span><span id="el-live-label" data-i18n="el.live">AO VIVO</span><span class="text-mute normal-case tracking-normal font-normal" id="el-updated"></span></div>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-ink" data-i18n="el.title">Empty Legs ao vivo</h2>
+                        <p class="text-mute text-sm mt-2 max-w-xl" data-i18n="el.sub">Voos de retorno ou posicionamento sem passageiros, com até 75% de desconto.</p>
+                    </div>
+                    <p id="el-count" class="text-xs text-mute" role="status"></p>
+                </div>
+                <div id="el-preview-grid" class="grid grid-cols-1 md:grid-cols-3 gap-5"></div>
+                <div id="sr-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+                <div class="text-center mt-8"><a href="empty-legs.html" class="btn btn-wine px-8"><span data-i18n="el.all">Ver todos os empty legs ao vivo</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a></div>
+            </div>
+        </section>
+        <div class="divider-down" aria-hidden="true"></div>
+
+        <!-- DESTINOS: 4 cards compactos -->
+        <section id="destinos" class="py-16 scroll-mt-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-8">
+                <div class="text-center mb-10 reveal"><span class="text-taupe text-xs uppercase tracking-[0.2em] font-semibold block mb-2" data-i18n="dest.eyebrow">Rotas frequentes</span><h2 class="font-serif text-3xl sm:text-4xl font-bold text-ink" data-i18n="dest.title">Destinos em destaque</h2></div>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                    <a href="#simulador" data-dest="SBGR" data-name="São Paulo (SBGR)" class="dest-card group card overflow-hidden block reveal"><div class="h-36 overflow-hidden"><img loading="lazy" onerror="AetherImages.fallback(this, 'destino')" src="assets/img/sao-paulo.webp" alt="São Paulo" class="w-full h-full object-cover grayscale-[.4] group-hover:scale-105 transition-transform duration-500"></div><div class="p-4"><span class="text-[11px] text-taupe uppercase tracking-wider font-semibold">Brasil</span><h3 class="font-serif text-lg font-bold text-ink">São Paulo</h3><span class="text-xs text-wineInk font-semibold" data-i18n="dest.charter">Cotar esta rota</span></div></a>
+                    <a href="#simulador" data-dest="SBRJ" data-name="Rio de Janeiro (SBRJ)" class="dest-card group card overflow-hidden block reveal"><div class="h-36 overflow-hidden"><img loading="lazy" onerror="AetherImages.fallback(this, 'destino')" src="assets/img/rio.webp" alt="Rio de Janeiro" class="w-full h-full object-cover grayscale-[.4] group-hover:scale-105 transition-transform duration-500"></div><div class="p-4"><span class="text-[11px] text-taupe uppercase tracking-wider font-semibold">Brasil</span><h3 class="font-serif text-lg font-bold text-ink">Rio de Janeiro</h3><span class="text-xs text-wineInk font-semibold" data-i18n="dest.charter">Cotar esta rota</span></div></a>
+                    <a href="#simulador" data-dest="SBFL" data-name="Florianópolis (SBFL)" class="dest-card group card overflow-hidden block reveal"><div class="h-36 overflow-hidden"><img loading="lazy" onerror="AetherImages.fallback(this, 'destino')" src="assets/img/florianopolis.webp" alt="Florianópolis" class="w-full h-full object-cover grayscale-[.4] group-hover:scale-105 transition-transform duration-500"></div><div class="p-4"><span class="text-[11px] text-taupe uppercase tracking-wider font-semibold">Santa Catarina</span><h3 class="font-serif text-lg font-bold text-ink">Florianópolis</h3><span class="text-xs text-wineInk font-semibold" data-i18n="dest.charter">Cotar esta rota</span></div></a>
+                    <a href="#simulador" data-dest="KOPF" data-name="Miami (KOPF)" class="dest-card group card overflow-hidden block reveal"><div class="h-36 overflow-hidden"><img loading="lazy" onerror="AetherImages.fallback(this, 'destino')" src="assets/img/miami.jpg" alt="Miami" class="w-full h-full object-cover grayscale-[.4] group-hover:scale-105 transition-transform duration-500"></div><div class="p-4"><span class="text-[11px] text-taupe uppercase tracking-wider font-semibold">Estados Unidos</span><h3 class="font-serif text-lg font-bold text-ink">Miami</h3><span class="text-xs text-wineInk font-semibold" data-i18n="dest.charter">Cotar esta rota</span></div></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ (4 perguntas, <details> nativo: teclado e leitor de tela funcionam sem JS) -->
+        <section id="faq" class="py-16 scroll-mt-24">
+            <div class="max-w-3xl mx-auto px-4 sm:px-8">
+                <div class="text-center mb-8 reveal"><span class="text-taupe text-xs uppercase tracking-[0.2em] font-semibold block mb-2" data-i18n="faq.eyebrow">Esclarecimentos</span><h2 class="font-serif text-3xl sm:text-4xl font-bold text-ink" data-i18n="faq.title">Perguntas frequentes</h2></div>
+                <div class="space-y-3">
+                    <details class="card group"><summary class="p-5 cursor-pointer flex justify-between items-center gap-4 font-serif text-lg font-bold text-ink list-none"><span data-i18n="faq.q1">Como é calculado o preço?</span><i data-lucide="chevron-down" class="w-5 h-5 text-wineInk shrink-0 group-open:rotate-180 transition-transform"></i></summary><p class="px-5 pb-5 text-sm text-mute leading-relaxed" data-i18n="faq.a1"></p></details>
+                    <details class="card group"><summary class="p-5 cursor-pointer flex justify-between items-center gap-4 font-serif text-lg font-bold text-ink list-none"><span data-i18n="faq.q2">Formas de pagamento?</span><i data-lucide="chevron-down" class="w-5 h-5 text-wineInk shrink-0 group-open:rotate-180 transition-transform"></i></summary><p class="px-5 pb-5 text-sm text-mute leading-relaxed" data-i18n="faq.a2"></p></details>
+                    <details class="card group"><summary class="p-5 cursor-pointer flex justify-between items-center gap-4 font-serif text-lg font-bold text-ink list-none"><span data-i18n="faq.q3">Antecedência mínima?</span><i data-lucide="chevron-down" class="w-5 h-5 text-wineInk shrink-0 group-open:rotate-180 transition-transform"></i></summary><p class="px-5 pb-5 text-sm text-mute leading-relaxed" data-i18n="faq.a3"></p></details>
+                    <details class="card group"><summary class="p-5 cursor-pointer flex justify-between items-center gap-4 font-serif text-lg font-bold text-ink list-none"><span data-i18n="faq.q4">Política de cancelamento?</span><i data-lucide="chevron-down" class="w-5 h-5 text-wineInk shrink-0 group-open:rotate-180 transition-transform"></i></summary><p class="px-5 pb-5 text-sm text-mute leading-relaxed" data-i18n="faq.a4"></p></details>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAMADA FINAL: faixa cinematográfica com parallax -->
+        <section class="scope-night bg-sand">
+            <div class="parallax-band">
+                <div class="parallax-band-bg" style="background-image: url('assets/img/jato.webp'), linear-gradient(120deg, #22252b, #552430);"></div>
+                <div class="parallax-overlay"></div>
+                <div class="relative z-10 max-w-3xl mx-auto px-4 py-20 text-center">
+                    <span class="text-taupe text-xs uppercase tracking-[0.3em] font-semibold block mb-4" data-i18n="cta.eyebrow">Pronto para decolar?</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-ink italic mb-5 leading-tight" data-i18n="cta.title">A verdadeira liberdade de voar</h2>
+                    <p class="text-mute text-base sm:text-lg mb-8" data-i18n="cta.sub">Solicite sua cotação em minutos.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#simulador" class="btn btn-wine px-8 py-4"><span data-i18n="cta.btn">Solicitar cotação agora</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                        <a href="https://wa.me/5531971573764" target="_blank" rel="noopener" class="btn btn-ghost px-8 py-4"><i data-lucide="message-circle" class="w-4 h-4"></i><span data-i18n="cta.wa">Atendimento por WhatsApp</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="layout-footer"></div>
+    </div><!-- fim #home-content -->
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/airports.js"></script>
+    <script src="assets/js/route-config.js"></script>
+    <script src="assets/js/route-service.js"></script>
+    <script src="assets/js/catalog.js"></script>
+    <script src="assets/js/catalog-seed.js"></script>
+    <script src="assets/js/catalog-store.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/aether-core.js"></script>
+    <script src="assets/js/aether-ui.js"></script>
+    <script src="assets/js/empty-legs-feed.js"></script>
+    <script src="assets/js/empty-legs.js"></script>
+    <script src="assets/js/home.js"></script>
+    <script src="assets/js/client-portal.js"></script>
+    <script src="assets/js/cinematic.js"></script>
+</body>
+</html>

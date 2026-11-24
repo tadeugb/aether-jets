@@ -1,0 +1,223 @@
+[graphify watch] Watching /home/dev/Downloads/aether-jets - press Ctrl+C to stop
+[graphify watch] Code changes rebuild graph automatically. Doc/image changes require /graphify --update.
+[graphify watch] Debounce: 3.0s
+
+[graphify watch] 2 file(s) changed
+[graphify watch] 5 file(s) not classified (no supported extension or shebang), skipped: catalog-pages.css, cinematic.css, site.css, tailwind-input.css, tailwind.css
+  AST cache: 10/42 files served from cache (23%); 32 to extract
+  warning: 2 .sql file(s) contributed nothing to the graph because a dependency is missing: tree_sitter_sql not installed. Install it with: pip install "graphifyy[sql]" (#1745)
+  warning: 7 code file(s) yielded no symbols (1.32 MB) — a data file, or source this extractor models no symbols for: assets/js/airports.js, assets/js/catalog-seed.js, assets/js/catalog.js, assets/js/page-admin-login.js, assets/js/route-config.js (+2 more)
+[graphify watch] No code-graph topology changes detected; outputs left untouched.
+
+[graphify watch] 3 file(s) changed
+[graphify watch] 5 file(s) not classified (no supported extension or shebang), skipped: catalog-pages.css, cinematic.css, site.css, tailwind-input.css, tailwind.css
+  AST cache: 10/43 files served from cache (23%); 33 to extract
+  warning: 2 .sql file(s) contributed nothing to the graph because a dependency is missing: tree_sitter_sql not installed. Install it with: pip install "graphifyy[sql]" (#1745)
+  warning: 7 code file(s) yielded no symbols (1.32 MB) — a data file, or source this extractor models no symbols for: assets/js/airports.js, assets/js/catalog-seed.js, assets/js/catalog.js, assets/js/page-admin-login.js, assets/js/route-config.js (+2 more)
+[graphify watch] community set changed since labeling (0 saved labels, 48 communities now; renamed 3 community(ies) by their hub). Run `graphify label` to refresh names with the LLM.
+[graphify watch] Rebuilt: 488 nodes, 793 edges, 48 communities
+[graphify watch] graph.json, graph.html and GRAPH_REPORT.md updated in graphify-out
+
+[graphify watch] 2 file(s) changed
+[graphify watch] 5 file(s) not classified (no supported extension or shebang), skipped: catalog-pages.css, cinematic.css, site.css, tailwind-input.css, tailwind.css
+  AST cache: 11/44 files served from cache (25%); 33 to extract
+  warning: 2 .sql file(s) contributed nothing to the graph because a dependency is missing: tree_sitter_sql not installed. Install it with: pip install "graphifyy[sql]" (#1745)
+  warning: 7 code file(s) yielded no symbols (1.32 MB) — a data file, or source this extractor models no symbols for: assets/js/airports.js, assets/js/catalog-seed.js, assets/js/catalog.js, assets/js/page-admin-login.js, assets/js/route-config.js (+2 more)
+[graphify watch] community set changed since labeling (0 saved labels, 48 communities now; renamed 1 community(ies) by their hub). Run `graphify label` to refresh names with the LLM.
+[graphify watch] Rebuilt: 517 nodes, 843 edges, 48 communities
+[graphify watch] graph.json, graph.html and GRAPH_REPORT.md updated in graphify-out
+
+[graphify watch] 4 file(s) changed
+[graphify watch] 5 file(s) not classified (no supported extension or shebang), skipped: catalog-pages.css, cinematic.css, site.css, tailwind-input.css, tailwind.css
+  AST cache: 11/44 files served from cache (25%); 33 to extract
+  warning: 2 .sql file(s) contributed nothing to the graph because a dependency is missing: tree_sitter_sql not installed. Install it with: pip install "graphifyy[sql]" (#1745)
+  warning: 7 code file(s) yielded no symbols (1.32 MB) — a data file, or source this extractor models no symbols for: assets/js/airports.js, assets/js/catalog-seed.js, assets/js/catalog.js, assets/js/page-admin-login.js, assets/js/route-config.js (+2 more)
+[graphify watch] Rebuilt: 518 nodes, 845 edges, 48 communities
+[graphify watch] graph.json, graph.html and GRAPH_REPORT.md updated in graphify-out
+
+[graphify watch] 1 file(s) changed
+[graphify watch] 5 file(s) not classified (no supported extension or shebang), skipped: catalog-pages.css, cinematic.css, site.css, tailwind-input.css, tailwind.css
+  AST cache: 11/44 files served from cache (25%); 33 to extract
+  warning: 2 .sql file(s) contributed nothing to the graph because a dependency is missing: tree_sitter_sql not installed. Install it with: pip install "graphifyy[sql]" (#1745)
+  warning: 7 code file(s) yielded no symbols (1.32 MB) — a data file, or source this extractor models no symbols for: assets/js/airports.js, assets/js/catalog-seed.js, assets/js/catalog.js, assets/js/page-admin-login.js, assets/js/route-config.js (+2 more)
+[graphify watch] No code-graph topology changes detected; outputs left untouched.
+
+[graphify watch] 2 file(s) changed
+[graphify watch] 5 file(s) not classified (no supported extension or shebang), skipped: catalog-pages.css, cinematic.css, site.css, tailwind-input.css, tailwind.css
+  AST cache: 11/44 files served from cache (25%); 33 to extract
+  warning: 2 .sql file(s) contributed nothing to the graph because a dependency is missing: tree_sitter_sql not installed. Install it with: pip install "graphifyy[sql]" (#1745)
+  warning: 7 code file(s) yielded no symbols (1.32 MB) — a data file, or source this extractor models no symbols for: assets/js/airports.js, assets/js/catalog-seed.js, assets/js/catalog.js, assets/js/page-admin-login.js, assets/js/route-config.js (+2 more)
+[graphify watch] Rebuilt: 518 nodes, 845 edges, 48 communities
+[graphify watch] graph.json, graph.html and GRAPH_REPORT.md updated in graphify-out
+
+[graphify watch] 2 file(s) changed
+[graphify watch] 5 file(s) not classified (no supported extension or shebang), skipped: catalog-pages.css, cinematic.css, site.css, tailwind-input.css, tailwind.css
+  AST cache: 11/45 files served from cache (24%); 34 to extract
+  warning: 2 .sql file(s) contributed nothing to the graph because a dependency is missing: tree_sitter_sql not installed. Install it with: pip install "graphifyy[sql]" (#1745)
+  warning: 7 code file(s) yielded no symbols (1.32 MB) — a data file, or source this extractor models no symbols for: assets/js/airports.js, assets/js/catalog-seed.js, assets/js/catalog.js, assets/js/page-admin-login.js, assets/js/route-config.js (+2 more)
+[graphify] WARNING: PDF text extraction skipped: 'pypdf' is not installed. Install the pdf extra: uv tool install 'graphifyy[pdf]'
+[graphify watch] Rebuilt: 525 nodes, 855 edges, 48 communities
+[graphify watch] graph.json, graph.html and GRAPH_REPORT.md updated in graphify-out
+
+[graphify watch] 1 file(s) changed
+
+[graphify watch] New or changed files detected in .
+[graphify watch] Non-code files changed - semantic re-extraction requires LLM.
+[graphify watch] Run `/graphify --update` in Claude Code to update the graph.
+[graphify watch] Flag written to graphify-out/needs_update
+
+[graphify watch] 1 file(s) changed
+
+[graphify watch] New or changed files detected in .
+[graphify watch] Non-code files changed - semantic re-extraction requires LLM.
+[graphify watch] Run `/graphify --update` in Claude Code to update the graph.
+[graphify watch] Flag written to graphify-out/needs_update
+
+[graphify watch] 1 file(s) changed
+
+[graphify watch] New or changed files detected in .
+[graphify watch] Non-code files changed - semantic re-extraction requires LLM.
+[graphify watch] Run `/graphify --update` in Claude Code to update the graph.
+[graphify watch] Flag written to graphify-out/needs_update
+
+[graphify watch] 2 file(s) changed
+[graphify watch] 5 file(s) not classified (no supported extension or shebang), skipped: catalog-pages.css, cinematic.css, site.css, tailwind-input.css, tailwind.css
+  AST cache: 9/46 files served from cache (19%); 37 to extract
+  warning: 3 .sql file(s) contributed nothing to the graph because a dependency is missing: tree_sitter_sql not installed. Install it with: pip install "graphifyy[sql]" (#1745)
+  warning: 7 code file(s) yielded no symbols (1.32 MB) — a data file, or source this extractor models no symbols for: assets/js/airports.js, assets/js/catalog-seed.js, assets/js/catalog.js, assets/js/page-admin-login.js, assets/js/route-config.js (+2 more)
+[graphify watch] community set changed since labeling (0 saved labels, 48 communities now; renamed 1 community(ies) by their hub). Run `graphify label` to refresh names with the LLM.
+[graphify watch] Rebuilt: 534 nodes, 864 edges, 48 communities
+[graphify watch] graph.json, graph.html and GRAPH_REPORT.md updated in graphify-out
+
+[graphify watch] 3 file(s) changed
+[graphify watch] 5 file(s) not classified (no supported extension or shebang), skipped: catalog-pages.css, cinematic.css, site.css, tailwind-input.css, tailwind.css
+  AST cache: 11/47 files served from cache (23%); 36 to extract
+  warning: 3 .sql file(s) contributed nothing to the graph because a dependency is missing: tree_sitter_sql not installed. Install it with: pip install "graphifyy[sql]" (#1745)
+  warning: 7 code file(s) yielded no symbols (1.32 MB) — a data file, or source this extractor models no symbols for: assets/js/airports.js, assets/js/catalog-seed.js, assets/js/catalog.js, assets/js/page-admin-login.js, assets/js/route-config.js (+2 more)
+[graphify watch] community set changed since labeling (0 saved labels, 48 communities now; renamed 1 community(ies) by their hub). Run `graphify label` to refresh names with the LLM.
+[graphify watch] Rebuilt: 538 nodes, 868 edges, 48 communities
+[graphify watch] graph.json, graph.html and GRAPH_REPORT.md updated in graphify-out
+
+[graphify watch] New or changed files detected in .
+[graphify watch] Non-code files changed - semantic re-extraction requires LLM.
+[graphify watch] Run `/graphify --update` in Claude Code to update the graph.
+[graphify watch] Flag written to graphify-out/needs_update
+
+[graphify watch] 1 file(s) changed
+[graphify watch] 5 file(s) not classified (no supported extension or shebang), skipped: catalog-pages.css, cinematic.css, site.css, tailwind-input.css, tailwind.css
+  AST cache: 11/47 files served from cache (23%); 36 to extract
+  warning: 3 .sql file(s) contributed nothing to the graph because a dependency is missing: tree_sitter_sql not installed. Install it with: pip install "graphifyy[sql]" (#1745)
+  warning: 7 code file(s) yielded no symbols (1.32 MB) — a data file, or source this extractor models no symbols for: assets/js/airports.js, assets/js/catalog-seed.js, assets/js/catalog.js, assets/js/page-admin-login.js, assets/js/route-config.js (+2 more)
+[graphify watch] No code-graph topology changes detected; outputs left untouched.
+
+[graphify watch] 7 file(s) changed
+[graphify watch] 5 file(s) not classified (no supported extension or shebang), skipped: catalog-pages.css, cinematic.css, site.css, tailwind-input.css, tailwind.css
+  AST cache: 11/48 files served from cache (22%); 37 to extract
+  warning: 3 .sql file(s) contributed nothing to the graph because a dependency is missing: tree_sitter_sql not installed. Install it with: pip install "graphifyy[sql]" (#1745)
+  warning: 7 code file(s) yielded no symbols (1.32 MB) — a data file, or source this extractor models no symbols for: assets/js/airports.js, assets/js/catalog-seed.js, assets/js/catalog.js, assets/js/page-admin-login.js, assets/js/route-config.js (+2 more)
+[graphify watch] community set changed since labeling (0 saved labels, 48 communities now; renamed 1 community(ies) by their hub). Run `graphify label` to refresh names with the LLM.
+[graphify watch] Rebuilt: 561 nodes, 908 edges, 48 communities
+[graphify watch] graph.json, graph.html and GRAPH_REPORT.md updated in graphify-out
+
+[graphify watch] New or changed files detected in .
+[graphify watch] Non-code files changed - semantic re-extraction requires LLM.
+[graphify watch] Run `/graphify --update` in Claude Code to update the graph.
+[graphify watch] Flag written to graphify-out/needs_update
+
+[graphify watch] 1 file(s) changed
+
+[graphify watch] New or changed files detected in .
+[graphify watch] Non-code files changed - semantic re-extraction requires LLM.
+[graphify watch] Run `/graphify --update` in Claude Code to update the graph.
+[graphify watch] Flag written to graphify-out/needs_update
+
+[graphify watch] 2 file(s) changed
+
+[graphify watch] New or changed files detected in .
+[graphify watch] Non-code files changed - semantic re-extraction requires LLM.
+[graphify watch] Run `/graphify --update` in Claude Code to update the graph.
+[graphify watch] Flag written to graphify-out/needs_update
+
+[graphify watch] 3 file(s) changed
+[graphify watch] 5 file(s) not classified (no supported extension or shebang), skipped: catalog-pages.css, cinematic.css, site.css, tailwind-input.css, tailwind.css
+  AST cache: 11/48 files served from cache (22%); 37 to extract
+  warning: 3 .sql file(s) contributed nothing to the graph because a dependency is missing: tree_sitter_sql not installed. Install it with: pip install "graphifyy[sql]" (#1745)
+  warning: 7 code file(s) yielded no symbols (1.32 MB) — a data file, or source this extractor models no symbols for: assets/js/airports.js, assets/js/catalog-seed.js, assets/js/catalog.js, assets/js/page-admin-login.js, assets/js/route-config.js (+2 more)
+[graphify watch] Rebuilt: 561 nodes, 908 edges, 48 communities
+[graphify watch] graph.json, graph.html and GRAPH_REPORT.md updated in graphify-out
+
+[graphify watch] New or changed files detected in .
+[graphify watch] Non-code files changed - semantic re-extraction requires LLM.
+[graphify watch] Run `/graphify --update` in Claude Code to update the graph.
+[graphify watch] Flag written to graphify-out/needs_update
+
+[graphify watch] 3 file(s) changed
+[graphify watch] 5 file(s) not classified (no supported extension or shebang), skipped: catalog-pages.css, cinematic.css, site.css, tailwind-input.css, tailwind.css
+  AST cache: 11/48 files served from cache (22%); 37 to extract
+  warning: 3 .sql file(s) contributed nothing to the graph because a dependency is missing: tree_sitter_sql not installed. Install it with: pip install "graphifyy[sql]" (#1745)
+  warning: 7 code file(s) yielded no symbols (1.32 MB) — a data file, or source this extractor models no symbols for: assets/js/airports.js, assets/js/catalog-seed.js, assets/js/catalog.js, assets/js/page-admin-login.js, assets/js/route-config.js (+2 more)
+[graphify watch] Rebuilt: 561 nodes, 908 edges, 48 communities
+[graphify watch] graph.json, graph.html and GRAPH_REPORT.md updated in graphify-out
+
+[graphify watch] New or changed files detected in .
+[graphify watch] Non-code files changed - semantic re-extraction requires LLM.
+[graphify watch] Run `/graphify --update` in Claude Code to update the graph.
+[graphify watch] Flag written to graphify-out/needs_update
+
+[graphify watch] 1 file(s) changed
+[graphify watch] 5 file(s) not classified (no supported extension or shebang), skipped: catalog-pages.css, cinematic.css, site.css, tailwind-input.css, tailwind.css
+  AST cache: 11/48 files served from cache (22%); 37 to extract
+  warning: 3 .sql file(s) contributed nothing to the graph because a dependency is missing: tree_sitter_sql not installed. Install it with: pip install "graphifyy[sql]" (#1745)
+  warning: 7 code file(s) yielded no symbols (1.32 MB) — a data file, or source this extractor models no symbols for: assets/js/airports.js, assets/js/catalog-seed.js, assets/js/catalog.js, assets/js/page-admin-login.js, assets/js/route-config.js (+2 more)
+[graphify watch] Rebuilt: 561 nodes, 908 edges, 48 communities
+[graphify watch] graph.json, graph.html and GRAPH_REPORT.md updated in graphify-out
+
+[graphify watch] 2 file(s) changed
+
+[graphify watch] New or changed files detected in .
+[graphify watch] Non-code files changed - semantic re-extraction requires LLM.
+[graphify watch] Run `/graphify --update` in Claude Code to update the graph.
+[graphify watch] Flag written to graphify-out/needs_update
+
+[graphify watch] 1 file(s) changed
+
+[graphify watch] New or changed files detected in .
+[graphify watch] Non-code files changed - semantic re-extraction requires LLM.
+[graphify watch] Run `/graphify --update` in Claude Code to update the graph.
+[graphify watch] Flag written to graphify-out/needs_update
+
+[graphify watch] 2 file(s) changed
+[graphify watch] 5 file(s) not classified (no supported extension or shebang), skipped: catalog-pages.css, cinematic.css, site.css, tailwind-input.css, tailwind.css
+  AST cache: 11/48 files served from cache (22%); 37 to extract
+  warning: 3 .sql file(s) contributed nothing to the graph because a dependency is missing: tree_sitter_sql not installed. Install it with: pip install "graphifyy[sql]" (#1745)
+  warning: 7 code file(s) yielded no symbols (1.32 MB) — a data file, or source this extractor models no symbols for: assets/js/airports.js, assets/js/catalog-seed.js, assets/js/catalog.js, assets/js/page-admin-login.js, assets/js/route-config.js (+2 more)
+[graphify watch] Rebuilt: 562 nodes, 909 edges, 48 communities
+[graphify watch] graph.json, graph.html and GRAPH_REPORT.md updated in graphify-out
+
+[graphify watch] New or changed files detected in .
+[graphify watch] Non-code files changed - semantic re-extraction requires LLM.
+[graphify watch] Run `/graphify --update` in Claude Code to update the graph.
+[graphify watch] Flag written to graphify-out/needs_update
+
+[graphify watch] 1 file(s) changed
+
+[graphify watch] New or changed files detected in .
+[graphify watch] Non-code files changed - semantic re-extraction requires LLM.
+[graphify watch] Run `/graphify --update` in Claude Code to update the graph.
+[graphify watch] Flag written to graphify-out/needs_update
+
+[graphify watch] 2 file(s) changed
+[graphify watch] 5 file(s) not classified (no supported extension or shebang), skipped: catalog-pages.css, cinematic.css, site.css, tailwind-input.css, tailwind.css
+  AST cache: 11/49 files served from cache (22%); 38 to extract
+  warning: 3 .sql file(s) contributed nothing to the graph because a dependency is missing: tree_sitter_sql not installed. Install it with: pip install "graphifyy[sql]" (#1745)
+  warning: 7 code file(s) yielded no symbols (1.32 MB) — a data file, or source this extractor models no symbols for: assets/js/airports.js, assets/js/catalog-seed.js, assets/js/catalog.js, assets/js/page-admin-login.js, assets/js/route-config.js (+2 more)
+[graphify watch] community set changed since labeling (0 saved labels, 48 communities now; renamed 1 community(ies) by their hub). Run `graphify label` to refresh names with the LLM.
+[graphify watch] Rebuilt: 570 nodes, 920 edges, 48 communities
+[graphify watch] graph.json, graph.html and GRAPH_REPORT.md updated in graphify-out
+
+[graphify watch] 3 file(s) changed
+[graphify watch] 5 file(s) not classified (no supported extension or shebang), skipped: catalog-pages.css, cinematic.css, site.css, tailwind-input.css, tailwind.css
+  AST cache: 11/49 files served from cache (22%); 38 to extract
+  warning: 3 .sql file(s) contributed nothing to the graph because a dependency is missing: tree_sitter_sql not installed. Install it with: pip install "graphifyy[sql]" (#1745)
+  warning: 7 code file(s) yielded no symbols (1.32 MB) — a data file, or source this extractor models no symbols for: assets/js/airports.js, assets/js/catalog-seed.js, assets/js/catalog.js, assets/js/page-admin-login.js, assets/js/route-config.js (+2 more)
+[graphify watch] community set changed since labeling (0 saved labels, 48 communities now; renamed 1 community(ies) by their hub). Run `graphify label` to refresh names with the LLM.

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empty Legs ao vivo | Aether Jets</title>
+    <meta name="description" content="Ofertas de voos de retorno e posicionamento de jatos executivos com desconto, atualizadas ao vivo (simulação).">
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="assets/vendor/lucide.js"></script>
+    <link rel="stylesheet" href="assets/css/cinematic.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="bg-sand text-ink font-sans antialiased selection:bg-wine selection:text-white">
+    <div id="layout-header"></div>
+    <main id="main">
+        <section class="scope-night bg-sand relative overflow-hidden">
+            <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(circle at 85% 0%, rgba(109,15,35,.4), transparent 55%), linear-gradient(180deg, rgba(35,38,43,0) 60%, rgba(35,38,43,.6))"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-8 py-14 relative">
+                <div class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-ink/10 border border-taupe/40 text-xs font-semibold tracking-widest text-taupe mb-5" role="status">
+                    <span id="el-live-dot" class="live-dot" aria-hidden="true"></span><span id="el-live-label" data-i18n="el.live">AO VIVO</span><span class="text-mute font-normal tracking-normal" id="el-updated"></span>
+                </div>
+                <h1 class="font-serif text-4xl sm:text-6xl font-bold text-ink mb-3" data-i18n="el.title">Empty Legs ao vivo</h1>
+                <p class="text-mute max-w-2xl mb-6" data-i18n="el.sub">Voos de retorno ou posicionamento sem passageiros, com até 75% de desconto.</p>
+                <div class="flex flex-wrap items-center gap-3">
+                    <button type="button" id="btn-alert" class="btn btn-wine"><i data-lucide="bell-ring" class="w-4 h-4"></i><span data-i18n="el.alert">Criar alerta</span></button>
+                    <span class="text-xs text-mute" data-i18n="el.simulated">Feed simulado: atualiza a cada 8 a 15 s</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 py-10">
+            <section class="card p-5 sm:p-6 mb-8" aria-label="Filtros">
+                <p class="field-label" id="lbl-region" data-i18n="el.region">Região</p>
+                <div id="el-region-chips" class="flex flex-wrap gap-2 mb-5" role="group" aria-labelledby="lbl-region"></div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
+                    <div><label class="field-label" for="f-date" data-i18n="el.date">Data</label><select id="f-date" class="field"><option value="all" data-i18n="el.dAll">Todas as datas</option><option value="today" data-i18n="el.d24">Próximas 24 h</option><option value="7days" data-i18n="el.d7">Próximos 7 dias</option><option value="30days" data-i18n="el.d30">Próximos 30 dias</option></select></div>
+                    <div><label class="field-label" for="f-cat" data-i18n="el.cat">Categoria</label><select id="f-cat" class="field"><option value="all" data-i18n="el.cAll">Todas as categorias</option><option value="leves" data-i18n="cat.leves">Jatos leves</option><option value="medios" data-i18n="cat.medios">Jatos médios</option><option value="pesados" data-i18n="cat.pesados">Jatos pesados</option><option value="turboelices" data-i18n="cat.turboelices">Turboélices</option></select></div>
+                    <div><label class="field-label" for="f-price"><span data-i18n="el.max">Preço máximo</span>: <span id="f-price-val" class="text-ink normal-case tracking-normal"></span></label><input id="f-price" type="range" min="20000" max="700000" step="5000" value="700000" class="w-full accent-wine h-[46px]"></div>
+                    <div><label class="field-label" for="f-sort" data-i18n="el.sort">Ordenar por</label><select id="f-sort" class="field"><option value="nearest" data-i18n="el.sNear">Mais próximos (data)</option><option value="discount" data-i18n="el.sDisc">Maior desconto</option><option value="price_asc" data-i18n="el.sPrice">Menor preço</option></select></div>
+                    <div><button type="button" id="f-reset" class="btn btn-ghost w-full" data-i18n="el.clear">Limpar filtros</button></div>
+                </div>
+            </section>
+
+            <p id="el-count" class="text-sm text-mute mb-4 font-medium" role="status"></p>
+            <div id="sr-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+            <div id="el-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            <div id="el-empty" class="hidden text-center py-16 card">
+                <i data-lucide="plane-takeoff" class="w-10 h-10 text-taupe mx-auto mb-3"></i>
+                <h2 class="font-serif text-2xl font-bold text-ink mb-1" data-i18n="el.empty">Nenhuma oferta com estes filtros</h2>
+                <p class="text-mute text-sm mb-5" data-i18n="el.emptyD">Ajuste os filtros ou crie um alerta para ser avisado.</p>
+                <div class="flex flex-wrap justify-center gap-3"><button type="button" id="el-empty-reset" class="btn btn-ghost" data-i18n="el.clear">Limpar filtros</button><button type="button" data-el-alert class="btn btn-wine" data-i18n="el.alert">Criar alerta</button></div>
+            </div>
+        </div>
+    </main>
+    <div id="layout-footer"></div>
+    <script src="assets/js/images.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/airports.js"></script>
+    <script src="assets/js/route-config.js"></script>
+    <script src="assets/js/route-service.js"></script>
+    <script src="assets/js/catalog.js"></script>
+    <script src="assets/js/catalog-seed.js"></script>
+    <script src="assets/js/catalog-store.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/aether-core.js"></script>
+    <script src="assets/js/aether-ui.js"></script>
+    <script src="assets/js/empty-legs-feed.js"></script>
+    <script src="assets/js/empty-legs.js"></script>
+    <script>Aether.mountLayout({ active: 'empty' }); AetherI18n.apply();</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar passagem | Aether Jets</title>
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="assets/vendor/lucide.js"></script>
+    <link rel="stylesheet" href="assets/css/cinematic.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="bg-sand text-white font-sans antialiased selection:bg-wine selection:text-white">
+    <div id="layout-header"></div>
+    <main id="main" class="max-w-7xl mx-auto px-4 sm:px-8 py-10">
+        <div id="stepper"></div>
+        <div class="mb-8">
+            <span class="text-taupe text-xs uppercase tracking-[0.2em] font-semibold block mb-2">Etapa 1 de 4</span>
+            <h1 class="font-serif text-3xl sm:text-5xl font-bold text-ink">Crie a sua passagem</h1>
+            <p class="text-mute text-sm mt-2 max-w-2xl">Escolha a rota, a data e a aeronave. O valor é calculado na hora pela distância real do voo.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 space-y-8">
+                <section class="card p-6" aria-labelledby="h-rota">
+                    <h2 id="h-rota" class="font-serif text-xl font-bold text-ink mb-5">1. Rota e data</h2>
+                    <div class="flex gap-2 mb-5" role="radiogroup" aria-label="Tipo de viagem">
+                        <button type="button" id="trip-ida" class="chip active" role="radio" aria-checked="true">Somente ida</button>
+                        <button type="button" id="trip-ida-volta" class="chip" role="radio" aria-checked="false">Ida e volta</button>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] gap-3 items-start">
+                        <div>
+                            <label class="field-label" for="f-origem">Origem</label>
+                            <div><input id="f-origem" class="field" type="text" placeholder="Cidade, ICAO ou IATA (ex.: SBSP)"></div>
+                            <p class="field-error" data-error-for="f-origem" role="alert"></p>
+                        </div>
+                        <button type="button" id="btn-swap" class="btn btn-ghost btn-sm sm:mt-7" aria-label="Inverter origem e destino" title="Inverter">&#8644;</button>
+                        <div>
+                            <label class="field-label" for="f-destino">Destino</label>
+                            <div><input id="f-destino" class="field" type="text" placeholder="Cidade, ICAO ou IATA (ex.: SUPE)"></div>
+                            <p class="field-error" data-error-for="f-destino" role="alert"></p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
+                        <div>
+                            <label class="field-label" for="f-data">Decolagem (ida)</label>
+                            <input id="f-data" class="field" type="datetime-local">
+                            <p class="field-error" data-error-for="f-data" role="alert"></p>
+                        </div>
+                        <div id="wrap-volta" class="hidden">
+                            <label class="field-label" for="f-volta">Decolagem (volta)</label>
+                            <input id="f-volta" class="field" type="datetime-local">
+                            <p class="field-error" data-error-for="f-volta" role="alert"></p>
+                        </div>
+                        <div>
+                            <label class="field-label" for="f-pax">Passageiros</label>
+                            <input id="f-pax" class="field" type="number" min="1" max="16" value="2" inputmode="numeric">
+                            <p class="field-error" data-error-for="f-pax" role="alert"></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card p-6" aria-labelledby="h-aero">
+                    <div class="flex flex-wrap items-end justify-between gap-3 mb-5">
+                        <h2 id="h-aero" class="font-serif text-xl font-bold text-ink">2. Aeronave</h2>
+                        <a href="frota.html" class="text-xs text-taupe hover:underline">Ver detalhes de toda a frota &rarr;</a>
+                    </div>
+                    <p id="aero-hint" class="text-xs text-mute mb-4"></p>
+                    <div id="aircraft-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4" role="radiogroup" aria-label="Aeronaves"></div>
+                </section>
+            </div>
+
+            <aside class="lg:col-span-1">
+                <div class="card card-gold p-6 lg:sticky lg:top-28 space-y-5" id="summary" aria-live="polite"></div>
+            </aside>
+        </div>
+    </main>
+    <div id="layout-footer"></div>
+    <script src="assets/js/images.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/airports.js"></script>
+    <script src="assets/js/route-config.js"></script>
+    <script src="assets/js/route-service.js"></script>
+    <script src="assets/js/catalog.js"></script>
+    <script src="assets/js/catalog-seed.js"></script>
+    <script src="assets/js/catalog-store.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/aether-core.js"></script>
+    <script src="assets/js/aether-ui.js"></script>
+    <script src="assets/js/page-criar.js"></script>
+</body>
+</html>

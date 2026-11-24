@@ -1,0 +1,10 @@
+.catalog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.25rem; }
+.catalog-fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); gap: 1rem; align-items: start; }
+.catalog-fields .full { grid-column: 1 / -1; }
+.package-image { height: 12rem; overflow: hidden; }
+.package-list li { display: flex; align-items: baseline; gap: .5rem; }
+.package-list li span { color: rgb(var(--c-wine-ink)); }
+.admin-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; padding: .75rem 0; border-bottom: 1px solid rgb(var(--c-stone) / .35); }
+.admin-row > span { min-width: 0; overflow-wrap: anywhere; }
+.admin-row:last-child { border-bottom: 0; }
+[hidden] { display: none !important; }

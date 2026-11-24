@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacotes | Aether Jets</title>
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="assets/vendor/lucide.js"></script>
+    <link rel="stylesheet" href="assets/css/cinematic.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="stylesheet" href="assets/css/catalog-pages.css">
+</head>
+<body class="bg-sand text-ink font-sans antialiased">
+    <div id="layout-header"></div>
+    <main id="main" class="max-w-7xl mx-auto px-4 sm:px-8 py-10">
+        <h1 class="font-serif text-4xl sm:text-5xl font-bold mb-3">Pacotes de viagem</h1>
+        <p class="text-mute mb-7">Voo executivo, hospedagem e transporte privativo em uma única proposta.</p>
+        <!-- Empty Legs tem inventário próprio. Este catálogo contém experiências completas sob consulta. -->
+        <form id="package-filters" class="card p-5 mb-6" aria-label="Filtrar pacotes">
+            <div class="catalog-fields">
+                <label><span class="field-label">Destino</span><select name="destino" class="field"><option value="">Todos</option></select></label>
+                <label><span class="field-label">Preço máximo (R$)</span><input name="preco" type="number" class="field" min="0" step="any" placeholder="Sem limite"></label>
+                <label><span class="field-label">Duração máxima (dias)</span><input name="dias" type="number" class="field" min="1" placeholder="Sem limite"></label>
+                <label><span class="field-label">Passageiros</span><input name="pax" type="number" class="field" min="1" placeholder="Qualquer capacidade"></label>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-4">
+                <button class="btn btn-wine" type="submit">Filtrar</button>
+                <button class="btn btn-ghost" type="reset">Limpar</button>
+            </div>
+        </form>
+        <p id="package-count" class="text-sm text-mute mb-3" aria-live="polite"></p>
+        <div id="package-results" class="catalog-grid"></div>
+    </main>
+    <div id="layout-footer"></div>
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+    <script src="assets/js/images.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/airports.js"></script>
+    <script src="assets/js/route-config.js"></script>
+    <script src="assets/js/route-service.js"></script>
+    <script src="assets/js/catalog.js"></script>
+    <script src="assets/js/catalog-seed.js"></script>
+    <script src="assets/js/catalog-store.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/aether-core.js"></script>
+    <script src="assets/js/aether-ui.js"></script>
+    <script src="assets/js/page-pacotes.js"></script>
+</body>
+</html>

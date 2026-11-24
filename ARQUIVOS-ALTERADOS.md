@@ -1,0 +1,80 @@
+# Arquivos novos e alterados
+
+Caminhos relativos à pasta `aether-jets/`. O ZIP contém o projeto completo.
+
+## Novos
+
+- `ARQUIVOS-ALTERADOS.md`
+- `README.md`
+- `admin-login.html`
+- `admin.html`
+- `assets/css/LICENSE-tailwind.txt`
+- `assets/css/catalog-pages.css`
+- `assets/css/tailwind-input.css`
+- `assets/css/tailwind.css`
+- `assets/data/catering.json`
+- `assets/data/frota.json`
+- `assets/data/pacotes.json`
+- `assets/img/avatar-fallback.webp`
+- `assets/img/avatar.jpg`
+- `assets/img/bebidas.jpg`
+- `assets/img/catering-fallback.webp`
+- `assets/img/catering.jpg`
+- `assets/img/destino-fallback.webp`
+- `assets/img/florianopolis.webp`
+- `assets/img/jato-fallback.webp`
+- `assets/img/jato.webp`
+- `assets/img/madri.jpg`
+- `assets/img/miami.jpg`
+- `assets/img/rio.webp`
+- `assets/img/sao-paulo.webp`
+- `assets/img/snacks.jpg`
+- `assets/js/admin-auth.js`
+- `assets/js/catalog-seed.js`
+- `assets/js/catalog-store.js`
+- `assets/js/images.js`
+- `assets/js/page-admin-login.js`
+- `assets/js/page-admin.js`
+- `assets/js/page-pacotes.js`
+- `assets/js/route-config.js`
+- `assets/vendor/LICENSE-lenis.txt`
+- `assets/vendor/LICENSE-lucide.txt`
+- `assets/vendor/gsap.js`
+- `assets/vendor/lenis.js`
+- `assets/vendor/lucide.js`
+- `assets/vendor/scroll-trigger.js`
+- `pacotes.html`
+- `tools/build_catalog.py`
+
+## Alterados
+
+- `LEIAME-ALTERACOES.md`
+- `assets/css/cinematic.css`
+- `assets/css/site.css`
+- `assets/data/airports.json`
+- `assets/js/aether-core.js`
+- `assets/js/aether-ui.js`
+- `assets/js/airports.js`
+- `assets/js/catalog.js`
+- `assets/js/client-portal.js`
+- `assets/js/data.js`
+- `assets/js/home.js`
+- `assets/js/i18n.js`
+- `assets/js/page-cardapio.js`
+- `assets/js/page-criar.js`
+- `assets/js/page-frota.js`
+- `assets/js/page-pagamento.js`
+- `assets/js/page-passagens.js`
+- `assets/js/route-service.js`
+- `assets/js/tailwind-config.js`
+- `blog.html`
+- `cardapio.html`
+- `criar-passagem.html`
+- `empty-legs.html`
+- `frota.html`
+- `index.html`
+- `legal.html`
+- `pagamento.html`
+- `passagens.html`
+- `sobre.html`
+- `tools/build_airports.py`

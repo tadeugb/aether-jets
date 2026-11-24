@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio | Aether Jets</title>
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="assets/vendor/lucide.js"></script>
+    <link rel="stylesheet" href="assets/css/cinematic.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="bg-sand text-white font-sans antialiased selection:bg-wine selection:text-white">
+    <div id="layout-header"></div>
+    <main id="main" class="max-w-7xl mx-auto px-4 sm:px-8 py-10">
+        <div id="stepper"></div>
+        <div class="mb-8">
+            <span class="text-taupe text-xs uppercase tracking-[0.2em] font-semibold block mb-2">Etapa 2 de 4</span>
+            <h1 class="font-serif text-3xl sm:text-5xl font-bold text-ink">Cardápio e serviços a bordo</h1>
+            <p class="text-mute text-sm mt-2 max-w-2xl">Monte a experiência da sua viagem. Tudo é opcional e entra no valor final. Itens sob encomenda pedem pelo menos 24 h de antecedência.</p>
+        </div>
+        <div id="draft-banner" class="hidden mb-6 card card-gold p-4 text-sm"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+                <div id="menu-tabs" class="flex flex-wrap gap-2 mb-6" role="tablist" aria-label="Categorias do cardápio"></div>
+                <div id="menu-content"></div>
+            </div>
+            <aside class="lg:col-span-1">
+                <div class="card card-gold p-6 lg:sticky lg:top-28 space-y-4" id="cart" aria-live="polite"></div>
+            </aside>
+        </div>
+    </main>
+    <div id="layout-footer"></div>
+    <script src="assets/js/images.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/airports.js"></script>
+    <script src="assets/js/route-config.js"></script>
+    <script src="assets/js/route-service.js"></script>
+    <script src="assets/js/catalog.js"></script>
+    <script src="assets/js/catalog-seed.js"></script>
+    <script src="assets/js/catalog-store.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/aether-core.js"></script>
+    <script src="assets/js/aether-ui.js"></script>
+    <script src="assets/js/page-cardapio.js"></script>
+</body>
+</html>

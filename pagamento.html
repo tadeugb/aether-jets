@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento | Aether Jets</title>
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="assets/vendor/lucide.js"></script>
+    <link rel="stylesheet" href="assets/css/cinematic.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="bg-sand text-white font-sans antialiased selection:bg-wine selection:text-white">
+    <div id="layout-header"></div>
+    <main id="main" class="max-w-7xl mx-auto px-4 sm:px-8 py-10">
+        <div id="stepper"></div>
+        <div class="mb-8">
+            <span class="text-taupe text-xs uppercase tracking-[0.2em] font-semibold block mb-2">Etapa 3 de 4</span>
+            <h1 class="font-serif text-3xl sm:text-5xl font-bold text-ink">Pagamento</h1>
+            <p class="text-mute text-sm mt-2 max-w-2xl">Escolha como pagar. <strong class="text-taupe">Ambiente de demonstração:</strong> nenhuma cobrança real é feita e os dados do cartão nunca são guardados.</p>
+        </div>
+
+        <div id="pay-guard" class="hidden card card-gold p-8 text-center max-w-xl mx-auto"></div>
+
+        <form id="pay-form" class="grid grid-cols-1 lg:grid-cols-3 gap-8" novalidate>
+            <div class="lg:col-span-2 space-y-6">
+                <section class="card p-6" aria-labelledby="h-payer">
+                    <h2 id="h-payer" class="font-serif text-xl font-bold text-ink mb-5">Dados do pagador</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="sm:col-span-2"><label class="field-label" for="p-name">Nome completo</label><input id="p-name" class="field" type="text" autocomplete="name"><p class="field-error" data-error-for="p-name" role="alert"></p></div>
+                        <div><label class="field-label" for="p-doc">CPF ou CNPJ</label><input id="p-doc" class="field" type="text" inputmode="numeric" placeholder="000.000.000-00"><p class="field-error" data-error-for="p-doc" role="alert"></p></div>
+                        <div><label class="field-label" for="p-email">E-mail</label><input id="p-email" class="field" type="email" autocomplete="email"><p class="field-error" data-error-for="p-email" role="alert"></p></div>
+                    </div>
+                </section>
+
+                <section class="card p-6" aria-labelledby="h-method">
+                    <h2 id="h-method" class="font-serif text-xl font-bold text-ink mb-5">Forma de pagamento</h2>
+                    <div id="method-tabs" class="grid grid-cols-2 sm:grid-cols-5 gap-2 mb-6" role="radiogroup" aria-label="Forma de pagamento"></div>
+
+                    <div id="panel-card" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="sm:col-span-2"><label class="field-label" for="cc-number">Número do cartão <span id="cc-brand" class="text-taupe normal-case"></span></label><input id="cc-number" class="field font-mono" type="text" inputmode="numeric" autocomplete="off" placeholder="0000 0000 0000 0000"><p class="field-error" data-error-for="cc-number" role="alert"></p></div>
+                            <div class="sm:col-span-2"><label class="field-label" for="cc-name">Nome impresso no cartão</label><input id="cc-name" class="field" type="text" autocomplete="off"><p class="field-error" data-error-for="cc-name" role="alert"></p></div>
+                            <div><label class="field-label" for="cc-exp">Validade</label><input id="cc-exp" class="field font-mono" type="text" inputmode="numeric" placeholder="MM/AA" maxlength="5" autocomplete="off"><p class="field-error" data-error-for="cc-exp" role="alert"></p></div>
+                            <div><label class="field-label" for="cc-cvv">CVV</label><input id="cc-cvv" class="field font-mono" type="password" inputmode="numeric" maxlength="4" autocomplete="off"><p class="field-error" data-error-for="cc-cvv" role="alert"></p></div>
+                        </div>
+                        <div id="wrap-installments"><label class="field-label" for="cc-installments">Parcelamento</label><select id="cc-installments" class="field"></select><p class="text-[11px] text-mute mt-1" id="installments-note"></p></div>
+                        <p class="text-[11px] text-mute">Demonstração: use 4111 1111 1111 1111 (aprovado) ou 4000 0000 0000 0002 (recusado). Qualquer validade futura e CVV.</p>
+                    </div>
+
+                    <div id="panel-pix" class="hidden space-y-3 text-sm text-mute"><p><strong class="text-taupe">5% de desconto</strong> pagando à vista no Pix.</p><p>Ao confirmar, a passagem é emitida como <strong class="text-ink">aguardando pagamento</strong> e você recebe o QR Code e o código copia e cola na tela da passagem.</p></div>
+                    <div id="panel-cheque" class="hidden space-y-3 text-sm text-mute"><p>Cheque nominal a <strong class="text-ink">Aether Jets Aviation Ltda.</strong>, retirado por mensageiro blindado agendado pelo concierge.</p><p>Sujeito a análise cadastral e compensação (até 3 dias úteis). A passagem fica <strong class="text-ink">aguardando pagamento</strong> até a compensação. Sem desconto.</p></div>
+                    <div id="panel-transferencia" class="hidden space-y-3 text-sm text-mute"><p>Transferência (TED ou PIX manual) para a conta abaixo. <strong class="text-warn">Dados fictícios de demonstração.</strong></p>
+                        <dl class="card p-4 text-xs grid grid-cols-2 gap-y-2"><dt>Favorecido</dt><dd class="text-ink">Aether Jets Aviation Ltda.</dd><dt>CNPJ</dt><dd class="text-ink">45.890.123/0001-99</dd><dt>Banco</dt><dd class="text-ink">000 &bull; Banco Demonstração</dd><dt>Agência / Conta</dt><dd class="text-ink">0001 / 12345-6</dd></dl>
+                        <p>Ao confirmar, a passagem fica <strong class="text-ink">aguardando pagamento</strong> até a conferência. Sem desconto.</p></div>
+                </section>
+
+                <section class="card p-6 space-y-4">
+                    <label class="flex items-start gap-3 text-sm cursor-pointer"><input type="checkbox" id="terms" class="mt-1 accent-wine w-4 h-4"><span class="text-mute">Li e aceito os termos de fretamento e a <strong class="text-ink">política de cancelamento</strong>: reembolso de <strong class="text-ink">100%</strong> com mais de 48 h de antecedência, <strong class="text-ink">50%</strong> entre 24 h e 48 h e <strong class="text-ink">sem reembolso</strong> com menos de 24 h.</span></label>
+                    <p class="field-error" data-error-for="terms" role="alert"></p>
+                    <p id="pay-error" class="hidden text-sm text-bad bg-bad/10 border border-bad/30 rounded-lg p-3" role="alert"></p>
+                    <button type="submit" id="btn-pay" class="btn btn-wine w-full text-base py-4">Confirmar e emitir passagem</button>
+                    <a href="cardapio.html" class="block text-center text-[11px] text-mute hover:text-ink">&larr; Voltar ao cardápio</a>
+                </section>
+            </div>
+
+            <aside class="lg:col-span-1"><div class="card card-gold p-6 lg:sticky lg:top-28 space-y-4" id="pay-summary" aria-live="polite"></div></aside>
+        </form>
+    </main>
+    <div id="layout-footer"></div>
+    <script src="assets/js/images.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/airports.js"></script>
+    <script src="assets/js/route-config.js"></script>
+    <script src="assets/js/route-service.js"></script>
+    <script src="assets/js/catalog.js"></script>
+    <script src="assets/js/catalog-seed.js"></script>
+    <script src="assets/js/catalog-store.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/aether-core.js"></script>
+    <script src="assets/js/aether-ui.js"></script>
+    <script src="assets/js/page-pagamento.js"></script>
+</body>
+</html>

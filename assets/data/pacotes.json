@@ -1,0 +1,89 @@
+[
+    {
+        "id": "miami-privada",
+        "nome": "Miami Privada",
+        "destino": "Miami, Estados Unidos",
+        "dias": 5,
+        "noites": 4,
+        "aeronaveId": "global-6000",
+        "hotel": "Four Seasons Hotel at The Surf Club",
+        "categoriaHotel": "5 estrelas",
+        "carro": "SUV blindado",
+        "motorista": "Motorista privativo bilíngue",
+        "incluidos": [
+            "Voo executivo",
+            "Hospedagem com café da manhã",
+            "Traslado blindado",
+            "Concierge",
+            "Catering a bordo"
+        ],
+        "opcionais": [
+            "Iate privativo",
+            "Spa",
+            "Segurança pessoal"
+        ],
+        "pax": 6,
+        "disponibilidade": "Datas sob consulta",
+        "preco": 390000,
+        "imagem": "assets/img/miami.jpg",
+        "descricao": "Quatro noites em Surfside, com concierge para organizar restaurantes e experiências locais."
+    },
+    {
+        "id": "madri-privada",
+        "nome": "Madri Cultural",
+        "destino": "Madri, Espanha",
+        "dias": 7,
+        "noites": 6,
+        "aeronaveId": "falcon-8x",
+        "hotel": "Mandarin Oriental Ritz, Madrid",
+        "categoriaHotel": "5 estrelas",
+        "carro": "Sedã executivo blindado",
+        "motorista": "Motorista privativo",
+        "incluidos": [
+            "Voo executivo",
+            "Hospedagem",
+            "Traslado blindado",
+            "Guia privativo",
+            "Catering a bordo"
+        ],
+        "opcionais": [
+            "Passeio privativo a Toledo",
+            "Spa",
+            "Seguro viagem"
+        ],
+        "pax": 8,
+        "disponibilidade": "Datas sob consulta",
+        "preco": 520000,
+        "imagem": "assets/img/madri.jpg",
+        "descricao": "Estadia no centro de Madri com roteiro de arte e gastronomia definido com o concierge."
+    },
+    {
+        "id": "rio-privado",
+        "nome": "Rio à Beira-Mar",
+        "destino": "Rio de Janeiro, Brasil",
+        "dias": 4,
+        "noites": 3,
+        "aeronaveId": "phenom-300e",
+        "hotel": "Copacabana Palace",
+        "categoriaHotel": "5 estrelas",
+        "carro": "SUV blindado",
+        "motorista": "Motorista privativo",
+        "incluidos": [
+            "Voo executivo",
+            "Hospedagem",
+            "Traslado blindado",
+            "Concierge",
+            "Catering a bordo"
+        ],
+        "opcionais": [
+            "Passeio privativo",
+            "Spa",
+            "Segurança pessoal"
+        ],
+        "pax": 4,
+        "disponibilidade": "Datas sob consulta",
+        "preco": 96000,
+        "imagem": "assets/img/rio.webp",
+        "descricao": "Três noites no Rio, com traslados privativos entre o aeroporto, o hotel e os compromissos programados."
+    }
+]

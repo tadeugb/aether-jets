@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aeronaves | Aether Jets</title>
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="assets/vendor/lucide.js"></script>
+    <link rel="stylesheet" href="assets/css/cinematic.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="bg-sand text-white font-sans antialiased selection:bg-wine selection:text-white">
+    <div id="layout-header"></div>
+    <main id="main" class="max-w-7xl mx-auto px-4 sm:px-8 py-10">
+        <div class="mb-8">
+            <span class="text-taupe text-xs uppercase tracking-[0.2em] font-semibold block mb-2">Frota</span>
+            <h1 class="font-serif text-3xl sm:text-5xl font-bold text-ink">Aeronaves disponíveis</h1>
+            <p class="text-mute text-sm mt-2 max-w-2xl">Compare modelos e veja quanto custa a viagem em cada um. O valor é calculado pela distância real entre os aeroportos.</p>
+        </div>
+
+        <section class="card card-gold p-6 mb-8" aria-labelledby="h-calc">
+            <h2 id="h-calc" class="font-serif text-lg font-bold text-ink mb-4">Calcule o valor para a sua rota</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-start">
+                <div><label class="field-label" for="c-origem">Origem</label><div><input id="c-origem" class="field" type="text" placeholder="Ex.: SBSP ou São Paulo"></div><p class="field-error" data-error-for="c-origem" role="alert"></p></div>
+                <div><label class="field-label" for="c-destino">Destino</label><div><input id="c-destino" class="field" type="text" placeholder="Ex.: SUPE ou Punta del Este"></div><p class="field-error" data-error-for="c-destino" role="alert"></p></div>
+                <div><label class="field-label" for="c-pax">Passageiros</label><input id="c-pax" class="field" type="number" min="1" max="16" value="2"></div>
+                <div class="md:pt-7"><button type="button" id="c-clear" class="btn btn-ghost w-full">Limpar rota</button></div>
+            </div>
+            <p id="c-result" class="text-sm text-mute mt-4" aria-live="polite">Informe origem e destino para ver o preço em cada aeronave.</p>
+        </section>
+
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+            <div id="cat-chips" class="flex flex-wrap gap-2" role="tablist" aria-label="Categorias"></div>
+            <div class="md:w-64"><label class="sr-only" for="sort">Ordenar</label><select id="sort" class="field"></select></div>
+        </div>
+        <div id="fleet-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" aria-live="polite"></div>
+    </main>
+    <div id="fleet-modal"></div>
+    <div id="layout-footer"></div>
+    <script src="assets/js/images.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/airports.js"></script>
+    <script src="assets/js/route-config.js"></script>
+    <script src="assets/js/route-service.js"></script>
+    <script src="assets/js/catalog.js"></script>
+    <script src="assets/js/catalog-seed.js"></script>
+    <script src="assets/js/catalog-store.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/aether-core.js"></script>
+    <script src="assets/js/aether-ui.js"></script>
+    <script src="assets/js/page-frota.js"></script>
+</body>
+</html>

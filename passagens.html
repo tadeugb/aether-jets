@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas passagens | Aether Jets</title>
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="assets/vendor/lucide.js"></script>
+    <link rel="stylesheet" href="assets/css/cinematic.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="bg-sand text-white font-sans antialiased selection:bg-wine selection:text-white">
+    <div id="layout-header"></div>
+    <main id="main" class="max-w-6xl mx-auto px-4 sm:px-8 py-10">
+        <div id="stepper"></div>
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+            <div>
+                <span class="text-taupe text-xs uppercase tracking-[0.2em] font-semibold block mb-2">Suas reservas</span>
+                <h1 class="font-serif text-3xl sm:text-5xl font-bold text-ink">Minhas passagens</h1>
+            </div>
+            <a href="criar-passagem.html" class="btn btn-wine">+ Criar nova passagem</a>
+        </div>
+        <div id="success-banner" class="hidden mb-6 card card-gold p-5"></div>
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+            <div id="filters" class="flex flex-wrap gap-2" role="tablist" aria-label="Filtrar passagens"></div>
+            <div class="md:w-72"><label class="sr-only" for="search">Buscar passagem</label><input id="search" class="field" type="search" placeholder="Buscar por código, cidade ou aeronave"></div>
+        </div>
+        <div id="ticket-list" class="space-y-4" aria-live="polite"></div>
+        <div id="empty" class="hidden card p-12 text-center">
+            <h2 class="font-serif text-2xl font-bold text-ink mb-2">Nenhuma passagem por aqui</h2>
+            <p id="empty-msg" class="text-sm text-mute max-w-md mx-auto mb-6">Crie a sua primeira passagem ou carregue exemplos para conhecer o painel.</p>
+            <div class="flex flex-wrap justify-center gap-3"><a href="criar-passagem.html" class="btn btn-wine">Criar passagem</a><button id="btn-seed" class="btn btn-ghost">Carregar passagens de exemplo</button></div>
+        </div>
+        <div class="mt-10 text-right"><button id="btn-wipe" class="text-[11px] text-mute hover:text-bad">Apagar todas as passagens deste navegador</button></div>
+    </main>
+    <div id="ticket-modal"></div>
+    <div id="layout-footer"></div>
+    <script src="assets/js/images.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/airports.js"></script>
+    <script src="assets/js/route-config.js"></script>
+    <script src="assets/js/route-service.js"></script>
+    <script src="assets/js/catalog.js"></script>
+    <script src="assets/js/catalog-seed.js"></script>
+    <script src="assets/js/catalog-store.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/aether-core.js"></script>
+    <script src="assets/js/aether-ui.js"></script>
+    <script src="assets/js/page-passagens.js"></script>
+</body>
+</html>

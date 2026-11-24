@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <script src="assets/js/admin-auth.js"></script>
+    <title>Login administrativo | Aether Jets</title>
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="assets/vendor/lucide.js"></script>
+    <link rel="stylesheet" href="assets/css/cinematic.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="stylesheet" href="assets/css/catalog-pages.css">
+</head>
+<body class="bg-sand text-ink font-sans antialiased">
+    <div id="layout-header"></div>
+    <main id="main" class="max-w-md mx-auto px-4 py-10">
+        <form id="admin-login" class="card p-6 space-y-4">
+            <h1 class="font-serif text-3xl font-bold">Administração</h1>
+            <label class="block"><span class="field-label">Usuário</span><input class="field" name="usuario" autocomplete="username" required></label>
+            <label class="block"><span class="field-label">Senha</span><input class="field" type="password" name="senha" autocomplete="current-password" required></label>
+            <p id="login-status" class="text-bad text-sm" role="alert"></p>
+            <button class="btn btn-wine w-full" type="submit">Entrar</button>
+        </form>
+    </main>
+    <div id="layout-footer"></div>
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+    <script src="assets/js/images.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/airports.js"></script>
+    <script src="assets/js/route-config.js"></script>
+    <script src="assets/js/route-service.js"></script>
+    <script src="assets/js/catalog.js"></script>
+    <script src="assets/js/catalog-seed.js"></script>
+    <script src="assets/js/catalog-store.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/aether-core.js"></script>
+    <script src="assets/js/aether-ui.js"></script>
+    <script src="assets/js/page-admin-login.js"></script>
+</body>
+</html>

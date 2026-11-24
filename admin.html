@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <script src="assets/js/admin-auth.js"></script>
+    <script>if (!AetherAdminAuth.active()) location.replace("admin-login.html");</script>
+    <title>Editar catálogo | Aether Jets</title>
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="assets/vendor/lucide.js"></script>
+    <link rel="stylesheet" href="assets/css/cinematic.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="stylesheet" href="assets/css/catalog-pages.css">
+</head>
+<body class="bg-sand text-ink font-sans antialiased">
+    <div id="layout-header"></div>
+    <main id="main" class="max-w-5xl mx-auto px-4 sm:px-8 py-10" hidden>
+        <div class="flex items-start justify-between flex-wrap gap-3 mb-6">
+            <h1 class="font-serif text-4xl font-bold">Editar catálogo</h1>
+            <button type="button" class="btn btn-ghost" id="admin-logout">Sair</button>
+        </div>
+        <nav class="flex flex-wrap gap-2 mb-5" aria-label="Seções do catálogo" id="admin-nav">
+            <button type="button" class="chip" data-section="frota">Aeronaves</button>
+            <button type="button" class="chip" data-section="catering">Catering</button>
+            <button type="button" class="chip" data-section="pacotes">Pacotes</button>
+            <button type="button" class="chip" data-reports>Relatórios</button>
+        </nav>
+        <p id="admin-status" class="min-h-6 text-sm mb-3" role="status"></p>
+        <section class="card p-5 mb-5" aria-labelledby="list-title">
+            <div class="flex flex-wrap justify-between items-center gap-3 mb-3">
+                <h2 id="list-title" class="font-serif text-2xl font-bold"></h2>
+                <button type="button" class="btn btn-wine" id="admin-add">Adicionar</button>
+            </div>
+            <div id="admin-list"></div>
+        </section>
+        <section id="admin-reports" class="card p-5 mb-5" aria-labelledby="reports-title" hidden>
+            <div class="flex flex-wrap justify-between items-end gap-3 mb-4">
+                <h2 id="reports-title" class="font-serif text-2xl font-bold">Relatórios</h2>
+                <label class="min-w-[16rem]"><span class="field-label">Relatório</span><select id="report-select" class="field"></select></label>
+            </div>
+            <div id="report-out" class="overflow-x-auto" aria-live="polite"></div>
+        </section>
+        <form id="admin-edit" class="card p-5" hidden>
+            <h2 id="editor-title" class="font-serif text-2xl font-bold mb-4" tabindex="-1"></h2>
+            <div id="admin-fields" class="catalog-fields"></div>
+            <div class="flex flex-wrap gap-2 mt-5">
+                <button type="submit" class="btn btn-wine">Salvar</button>
+                <button type="button" class="btn btn-ghost" id="admin-cancel">Cancelar</button>
+            </div>
+        </form>
+    </main>
+    <div id="layout-footer"></div>
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+    <script src="assets/js/images.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/airports.js"></script>
+    <script src="assets/js/route-config.js"></script>
+    <script src="assets/js/route-service.js"></script>
+    <script src="assets/js/catalog.js"></script>
+    <script src="assets/js/catalog-seed.js"></script>
+    <script src="assets/js/catalog-store.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/aether-core.js"></script>
+    <script src="assets/js/aether-ui.js"></script>
+    <script src="assets/js/page-admin.js"></script>
+    <script src="assets/js/page-admin-relatorios.js"></script>
+</body>
+</html>

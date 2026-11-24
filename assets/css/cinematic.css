@@ -1,0 +1,121 @@
+/**
+ * @file cinematic.css
+ * @description Tokens da paleta (prata, cinza, bege + vinho), escopo noturno em cinza-chumbo, fundo global fixo,
+ * grão de filme, poeira prateada, letterbox, preloader, faixas com parallax, hero com color grading e cursor.
+ *
+ * ATENÇÃO: o comentário de cabeçalho precisa abrir com "/**" (barra + asterisco), senão a regra :root é descartada.
+ * Os valores abaixo são tripletos RGB para o Tailwind aplicar opacidade (ex.: bg-ink/10).
+ */
+
+/* --- TOKENS (escopo claro: bege + prata) --- */
+:root {
+    --c-sand: 244 238 227;        /* #F4EEE3 fundo principal */
+    --c-sand-deep: 233 223 204;   /* #E9DFCC */
+    --c-silver: 228 230 234;      /* #E4E6EA cartões */
+    --c-fog: 215 218 223;         /* #D7DADF campos / superfícies */
+    --c-stone: 191 195 201;       /* #BFC3C9 bordas / cinza médio */
+    --c-slate: 107 112 120;       /* #6B7078 cinza de superfície (não usar em texto pequeno) */
+    --c-ink: 43 46 51;            /* #2B2E33 texto principal */
+    --c-mute: 77 82 90;           /* #4D525A texto secundário */
+    --c-taupe: 107 90 67;         /* #6B5A43 bege escuro de destaque */
+    --c-wine-ink: 109 15 35;      /* #6D0F23 vinho como texto */
+    --c-ok: 15 107 74; --c-warn: 122 78 0; --c-bad: 159 18 57;
+    --wine: #6D0F23; --wine-hover: #8B1A32; --wine-dark: #4A0A17;
+    --night: #23262B;             /* cinza-chumbo (substitui o preto) */
+    --night-2: #2B2E33;
+}
+
+/* --- ESCOPO NOTURNO: cinza-chumbo com texto bege/prata --- */
+.scope-night {
+    --c-sand: 35 38 43;           /* #23262B */
+    --c-sand-deep: 43 46 51;      /* #2B2E33 */
+    --c-silver: 52 56 62;         /* #34383E */
+    --c-fog: 62 67 74;            /* #3E434A */
+    --c-stone: 96 102 111;        /* #60666F */
+    --c-slate: 140 146 155;
+    --c-ink: 244 238 227;         /* #F4EEE3 */
+    --c-mute: 196 201 208;        /* #C4C9D0 */
+    --c-taupe: 214 200 170;       /* #D6C8AA */
+    --c-wine-ink: 233 174 187;    /* #E9AEBB */
+    --c-ok: 110 231 183; --c-warn: 252 211 77; --c-bad: 253 164 175;
+    color: rgb(var(--c-ink));
+    color-scheme: dark;
+}
+
+/* --- FUNDO GLOBAL FIXO: prata escovada, brilho vinho nos cantos, grão e poeira --- */
+body.cinematic-body { background-color: rgb(var(--c-sand)); color: rgb(var(--c-ink)); position: relative; overflow-x: hidden; }
+#global-bg-fixed {
+    position: fixed; inset: 0; pointer-events: none; z-index: -10;
+    background:
+        radial-gradient(circle at 92% 8%, rgba(109,15,35,.13) 0%, transparent 50%),
+        radial-gradient(circle at 6% 94%, rgba(109,15,35,.10) 0%, transparent 55%),
+        linear-gradient(160deg, #F4EEE3 0%, #E4E6EA 48%, #E9DFCC 100%);
+}
+#film-grain { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: -9; opacity: .07; mix-blend-mode: multiply; }
+#star-canvas { position: fixed; inset: 0; pointer-events: none; z-index: -8; }
+body.cinematic-body section.bg-sand:not(.scope-night) { background-color: transparent; }
+
+/* Faixa metálica que atravessa seções claras (sheen) */
+/* Sem overflow:hidden: ele cortava a lista de aeroportos do simulador (só a 1ª linha aparecia).
+   O brilho anda por background-position, então não precisa recortar nada. */
+.sheen { position: relative; }
+.sheen::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+    background: linear-gradient(115deg, transparent 45%, rgba(255,255,255,.35) 50%, transparent 55%) no-repeat;
+    background-size: 300% 100%; background-position: 100% 0; animation: sheen 9s ease-in-out 2s infinite;
+}
+@keyframes sheen { 0%, 55% { background-position: 100% 0; } 100% { background-position: 0 0; } }
+
+/* --- HERO: color grading cinza-chumbo + vinho (sem preto) --- */
+.hero-grade::before {
+    content: ""; position: absolute; inset: 0; z-index: 1;
+    background:
+        linear-gradient(to top, rgba(35,38,43,.96) 0%, rgba(35,38,43,.32) 45%, rgba(35,38,43,.16) 100%),
+        linear-gradient(100deg, rgba(35,38,43,.85) 0%, rgba(109,15,35,.12) 70%, rgba(35,38,43,.08) 100%);
+}
+.hero-grade::after { /* vinheta suave */
+    content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    box-shadow: inset 0 0 160px 20px rgba(35,38,43,.55);
+}
+.hero-grade { position: absolute; inset: 0; background: linear-gradient(120deg, #22252b, #552430); }
+.hero-img { display: block; width: 100%; height: 100%; object-fit: cover; animation: kenburns 26s ease-in-out infinite alternate; filter: grayscale(.35) contrast(1.05); }
+@keyframes kenburns { from { transform: scale(1.04); } to { transform: scale(1.14) translateY(-1.5%); } }
+.silver-text { background: linear-gradient(120deg, #F4EEE3 0%, #D7DADF 40%, #9EA4AC 70%, #E4E6EA 100%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: silverflow 8s ease-in-out infinite alternate; }
+@keyframes silverflow { to { background-position: 100% 0; } }
+
+/* --- Transições escuro <-> claro (cinza, nunca preto) --- */
+.divider-down { height: 110px; background: linear-gradient(to bottom, var(--night), rgb(244 238 227)); pointer-events: none; }
+.divider-up { height: 110px; background: linear-gradient(to bottom, rgb(244 238 227), var(--night)); pointer-events: none; }
+
+/* --- FAIXAS COM PARALLAX --- */
+.parallax-band { min-height: 460px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; }
+.parallax-band-bg { position: absolute; inset: -20% 0; background-size: cover; background-position: center; will-change: transform; filter: grayscale(.5); }
+.parallax-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(35,38,43,.82) 0%, rgba(109,15,35,.62) 100%); }
+
+/* --- PRELOADER (trava de segurança em 6 s) --- */
+#preloader { position: fixed; inset: 0; background-color: var(--night); color: #F4EEE3; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity .6s ease; animation: preloader-failsafe .4s ease 6s forwards; }
+@keyframes preloader-failsafe { to { opacity: 0; visibility: hidden; pointer-events: none; } }
+
+/* --- LETTERBOX 2.39:1 (cinza-chumbo) --- */
+.letterbox-bar { position: fixed; left: 0; right: 0; height: 8vh; background-color: var(--night); z-index: 9000; pointer-events: none; transition: transform 1.2s cubic-bezier(.77, 0, .175, 1); }
+.letterbox-top { top: 0; } .letterbox-bottom { bottom: 0; }
+body.loaded .letterbox-top { transform: translateY(-100%); }
+body.loaded .letterbox-bottom { transform: translateY(100%); }
+
+/* --- CURSOR --- */
+.custom-cursor { position: fixed; width: 32px; height: 32px; border: 1.5px solid var(--wine); border-radius: 50%; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%); transition: width .3s, height .3s, background-color .3s; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 600; color: var(--wine); text-transform: uppercase; letter-spacing: .1em; mix-blend-mode: normal; }
+.custom-cursor.hovered { width: 64px; height: 64px; background-color: rgba(109,15,35,.10); }
+
+.tilt-card { transform-style: preserve-3d; will-change: transform; }
+
+/* Reveal ao rolar (JS adiciona .in); sem JS o conteúdo fica visível */
+.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s ease; }
+.js .reveal.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+    .parallax-band-bg, #star-canvas, .custom-cursor, .letterbox-bar, .sheen::after { display: none !important; animation: none !important; transform: none !important; }
+    .silver-text { animation: none; }
+    .js .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+@media (prefers-reduced-motion: reduce) { .hero-img { animation: none; transform: none; } }
