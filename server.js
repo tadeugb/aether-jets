@@ -52,16 +52,22 @@ async function loadCatalog() {
 }
 
 // O painel envia o catálogo inteiro; aqui viram upserts numa transação só.
-// Aeronave e item de catering já vendidos não podem sumir (FK das passagens), então saem do catálogo com ativo = false.
+// Excluir no painel apaga de verdade. Só aeronave/item já usado em passagem (ou aeronave ainda em pacote) fica com
+// ativo = false, para o histórico das passagens não perder a referência.
 async function saveCatalog(data) {
   for (const k of ['frota', 'catering', 'pacotes']) if (!Array.isArray(data && data[k])) bad(`Campo ${k} ausente.`);
   const ids = (list) => { const s = list.map((x) => String(x.id || '')); if (s.some((x) => !x) || new Set(s).size !== s.length) bad('IDs vazios ou repetidos.'); return s; };
+  const frota = ids(data.frota), catering = ids(data.catering);
   const db = await pool.connect();
   try {
     await db.query('BEGIN');
     await db.query('DELETE FROM pacote WHERE NOT (id = ANY($1))', [ids(data.pacotes)]);
-    await db.query('UPDATE aeronave SET ativo = false WHERE NOT (id = ANY($1))', [ids(data.frota)]);
-    await db.query('UPDATE item_catering SET ativo = false WHERE NOT (id = ANY($1))', [ids(data.catering)]);
+    await db.query(`DELETE FROM aeronave a WHERE NOT (id = ANY($1))
+      AND NOT EXISTS (SELECT 1 FROM passagem p WHERE p.aeronave_id = a.id) AND NOT EXISTS (SELECT 1 FROM pacote k WHERE k.aeronave_id = a.id)`, [frota]);
+    await db.query('UPDATE aeronave SET ativo = false WHERE NOT (id = ANY($1))', [frota]);
+    await db.query(`DELETE FROM item_catering i WHERE NOT (id = ANY($1))
+      AND NOT EXISTS (SELECT 1 FROM passagem_catering c WHERE c.item_id = i.id)`, [catering]);
+    await db.query('UPDATE item_catering SET ativo = false WHERE NOT (id = ANY($1))', [catering]);
     for (const [i, a] of data.frota.entries()) {
       await db.query(`INSERT INTO aeronave (id, categoria_id, nome, modelo, pax, alcance_km, velocidade_kmh, valor_hora, tarifa_km, imagem, descricao, ordem, ativo)
         VALUES ($1,$2,$3,$4,$5,$6,$7,$8,round($8::numeric / $7::int, 2),$9,$10,$11,true)

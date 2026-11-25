@@ -66,3 +66,20 @@ test('relatórios exigem login e só aceitam nomes da lista', async () => {
   assert.equal(rede.linhas.reduce((s, l) => s + Number(l.aeroportos), 0), 5603);
   assert.equal((await api('/api/relatorios/constructor', auth)).status, 404);
 });
+
+test('excluir no painel apaga o que nunca foi vendido e só desativa o que foi', async () => {
+  const auth = { Authorization: 'Bearer ' + await login() };
+  const cat = await (await api('/api/catalogo')).json();
+  const novo = { ...cat.frota[0], id: 'teste-exclusao', nome: 'Teste exclusão' };
+  const put = (frota) => api('/api/catalogo', { method: 'PUT', headers: auth, body: JSON.stringify({ ...cat, frota }) });
+  assert.equal((await put([...cat.frota, novo])).status, 200);
+  assert.equal((await put(cat.frota)).status, 200);
+  assert.equal((await pool.query("SELECT 1 FROM aeronave WHERE id = 'teste-exclusao'")).rowCount, 0);
+  // aeronave com venda e sem pacote: excluir só desativa, e voltar ao catálogo reativa
+  const { rows: [v] } = await pool.query('SELECT p.aeronave_id AS id FROM passagem p WHERE p.aeronave_id IS NOT NULL AND NOT EXISTS (SELECT 1 FROM pacote k WHERE k.aeronave_id = p.aeronave_id) LIMIT 1');
+  assert.ok(v, 'precisa de uma passagem com aeronave fora de pacote (o teste de passagem cria uma)');
+  assert.equal((await put(cat.frota.filter((a) => a.id !== v.id))).status, 200);
+  assert.equal((await pool.query('SELECT ativo FROM aeronave WHERE id = $1', [v.id])).rows[0].ativo, false);
+  assert.equal((await put(cat.frota)).status, 200);
+  assert.equal((await pool.query('SELECT ativo FROM aeronave WHERE id = $1', [v.id])).rows[0].ativo, true);
+});

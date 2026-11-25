@@ -517,7 +517,7 @@ def build():
     <li><strong>ON DELETE RESTRICT</strong> (país, estado, região, categoria, aeronave de pacote, item de catering vendido): não se apaga um registro que outro usa.</li>
     <li><strong>ON DELETE CASCADE</strong> (trechos, catering e pagamento da passagem): são partes da passagem e saem junto com ela.</li>
     <li><strong>ON DELETE SET NULL</strong> (cliente e aeronave da passagem): a passagem continua no histórico mesmo sem o cadastro de origem.</li>
-    <li><strong>Exclusão lógica</strong> (coluna <code>ativo</code>): aeronaves e itens de catering já vendidos ficam no banco, só deixam de aparecer no catálogo.</li>
+    <li><strong>Exclusão física ou lógica:</strong> ao excluir no painel, aeronaves e itens de catering nunca vendidos são apagados (<code>DELETE</code>). Os que já aparecem em alguma passagem, ou a aeronave ainda ligada a um pacote, recebem <code>ativo = false</code>: saem do catálogo, mas o histórico das passagens continua completo.</li>
     </ul>
     <h2>4.2 Dicionário de dados</h2>
     <p>Na coluna Chave: PK = chave primária; FK = chave estrangeira, com a tabela e a coluna referenciadas.</p>
